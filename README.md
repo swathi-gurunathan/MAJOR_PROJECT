@@ -6,3 +6,5 @@ libraries to download:
 5. openpyxl
 5. xlrd
 6. pyxlsb
+
+to run: python gnn_training
