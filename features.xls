@@ -1,0 +1,11 @@
+id,num_links,num_attachments,is_html,email_count
+"""Agnirva.com"" <Student@agnirva.com>",0.0,0.0,1.0,1
+Coursera <Coursera@m.learn.coursera.org>,0.0,0.0,1.0,1
+Dean - Academics and IQAC <iqac@cmrit.ac.in>,2.2,0.7,1.0,10
+HackerEarth <community_marketing@hackerearth.com>,0.0,0.0,1.0,1
+Instructables <no-reply@mail.newsletter.instructables.com>,0.0,0.0,1.0,1
+Kavitha Campus House <hostel@cmrit.ac.in>,0.0,0.0,1.0,1
+LeetCode <no-reply@leetcode.com>,0.0,0.0,1.0,1
+Udemy <hello@students.udemy.com>,0.0,0.0,1.0,1
+Vice Principal CMRIT <viceprincipal@cmrit.ac.in>,2.0,1.0,1.0,2
+rakuten-product-conference@mail.rakuten.com,1.0,0.0,1.0,1
