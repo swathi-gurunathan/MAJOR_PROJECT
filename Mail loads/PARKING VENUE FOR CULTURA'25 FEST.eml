@@ -1,0 +1,385 @@
+Delivered-To: shnk22aiml@cmrit.ac.in
+Received: by 2002:a05:7108:3b0f:b0:402:288b:55c7 with SMTP id ba15csp3700363gdb;
+        Thu, 24 Apr 2025 02:38:29 -0700 (PDT)
+X-Forwarded-Encrypted: i=4; AJvYcCWVasg/cFO9eW++RnSfHFPPEKCBjVBETNuuyDRsrNXWwQ+yodfNgvs9ci4h7L/ZmZUhhM4l5WTDRp/W@cmrit.ac.in
+X-Received: by 2002:a17:90b:2f4f:b0:2ee:cded:9ac7 with SMTP id 98e67ed59e1d1-309ed2859a5mr2883981a91.20.1745487508705;
+        Thu, 24 Apr 2025 02:38:28 -0700 (PDT)
+ARC-Seal: i=3; a=rsa-sha256; t=1745487508; cv=pass;
+        d=google.com; s=arc-20240605;
+        b=hWopVmL9OQUHi045yrKFXFwB8iYXy1Ti9ZWLGsicbMm6OQHLykddzxBNgjH0jaftD9
+         DYKJSh4H1BxFjN5Di7eMd7R1qwNnpzjQ8FwR6e7DOso8FB0dchHRBT+rHEr3Woe9X8Ik
+         IP1mxXAup3B4xlwVEcSTBqPKy5oizLzNH1Ujz6RIrBjqTEfCd6r737e1+K/SUdYJtzX8
+         vBbf6Y1s9y2JPL/dH3cLw+T9w68dyzaqYlrWt16yhEZ1m4lcfNO7AyRAVhWJRstx6I+i
+         lhEBbSpd7qJkAvc2eBlVMOBR9tWVnKSa5DaiXhpYrISrNrh8PeUOz1QdnUarCiHU3SVt
+         9DwQ==
+ARC-Message-Signature: i=3; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
+         :list-id:mailing-list:precedence:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:dkim-signature;
+        bh=LpjAoZhTwmztYYyza0FGULYHUx8e8VzzUkGPG1mpCfE=;
+        fh=bacApHpV9jpbNSHZOmS9R5NYmgGXUuKP83jfGEdAqck=;
+        b=lRvZig/RaEBBDcch7WdkPlEd6ndNWlbcwqv2dFSyNcUqU9O++JxC7614dQvX1SwgLc
+         dxCMcKDULkWxf6JQ2WAT1Y9zW9kAPigIYXhsGFD4kojhmyo+xIIyx2KB+dTA50Rvamtx
+         Wet0xCjSTJn/oLw7smY8f9xVL5J0MusDay8fUWoyuwc+b6dZpxS569V64u9aN9Psrf3h
+         iaAUfUi6bmkCA/gwMShDCzaJzTAQHPS+vcrLzdX8E5F5ImUPC78pef0h1AqUsBcFCwxq
+         QHybsV9YIpwJH8KgR72ksri1HkWbt66USAdeASGF5UKJLPkRIAXR/dFm1Q0d308iyeYr
+         YAFw==;
+        dara=google.com
+ARC-Authentication-Results: i=3; mx.google.com;
+       dkim=pass header.i=@cmrit-ac-in.20230601.gappssmtp.com header.s=20230601 header.b=psfjJH3a;
+       arc=pass (i=2 spf=pass spfdomain=cmrit.ac.in dkim=pass dkdomain=cmrit-ac-in.20230601.gappssmtp.com dmarc=pass fromdomain=cmrit.ac.in);
+       spf=pass (google.com: domain of aiml22+bncbckoflhasigbbe4nvdaamgqe5gfrtzq@cmrit.ac.in designates 209.85.220.69 as permitted sender) smtp.mailfrom=aiml22+bncBCKOFLHASIGBBE4NVDAAMGQE5GFRTZQ@cmrit.ac.in;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=cmrit.ac.in;
+       dara=pass header.i=@cmrit.ac.in
+Return-Path: <aiml22+bncBCKOFLHASIGBBE4NVDAAMGQE5GFRTZQ@cmrit.ac.in>
+Received: from mail-sor-f69.google.com (mail-sor-f69.google.com. [209.85.220.69])
+        by mx.google.com with SMTPS id 98e67ed59e1d1-309ee842a17sor742140a91.8.2025.04.24.02.38.28
+        for <shnk22aiml@cmrit.ac.in>
+        (Google Transport Security);
+        Thu, 24 Apr 2025 02:38:28 -0700 (PDT)
+Received-SPF: pass (google.com: domain of aiml22+bncbckoflhasigbbe4nvdaamgqe5gfrtzq@cmrit.ac.in designates 209.85.220.69 as permitted sender) client-ip=209.85.220.69;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@cmrit-ac-in.20230601.gappssmtp.com header.s=20230601 header.b=psfjJH3a;
+       arc=pass (i=2 spf=pass spfdomain=cmrit.ac.in dkim=pass dkdomain=cmrit-ac-in.20230601.gappssmtp.com dmarc=pass fromdomain=cmrit.ac.in);
+       spf=pass (google.com: domain of aiml22+bncbckoflhasigbbe4nvdaamgqe5gfrtzq@cmrit.ac.in designates 209.85.220.69 as permitted sender) smtp.mailfrom=aiml22+bncBCKOFLHASIGBBE4NVDAAMGQE5GFRTZQ@cmrit.ac.in;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=cmrit.ac.in;
+       dara=pass header.i=@cmrit.ac.in
+ARC-Seal: i=2; a=rsa-sha256; t=1745487508; cv=pass;
+        d=google.com; s=arc-20240605;
+        b=kQnwhuEAthxuwO9+pkRjGfwqmCqI4Q4sFtc8VHwSp7UoK2b2NgltOsHJ6PUoyKpUaT
+         F/gZ0k7CjMjS+QqptNGxT6gXp6+huaOahK8ZFOLLLjEiEWfRGrXoMDlE6B3PXDi8Dywd
+         yO6oqHxZdcSiZF0MTvsgKbik/M0tgfNzcJGNcV/2sSINS3SWR1m9YPdWBL67eL+4rzlM
+         N3AvsQjIeKFwaqR/pcj2C2AHm0rgLPaDA1ykU1VYirn1G1WbqHknwLLm6c4CIR2pCFEU
+         7Me2UJic6IHYHYaETPssf99cudVQisDIHuROYVwPq5YZHt+2AjhfzznR2qrnX2Qt15YE
+         rK0Q==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
+         :list-id:mailing-list:precedence:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:dkim-signature;
+        bh=LpjAoZhTwmztYYyza0FGULYHUx8e8VzzUkGPG1mpCfE=;
+        fh=bacApHpV9jpbNSHZOmS9R5NYmgGXUuKP83jfGEdAqck=;
+        b=kBG4RLMUw9Hm6SVsopLbrPVRd1nLSvIwINsGQwEhZrrJdXulaKnJgE5dbA1aZwW26l
+         ok9tV6SYrBHGDoXG/8DfwpjHhQRIpztZyuFLS63JC/Ax0qlhWPSJpQKc5kyTZD8BI27w
+         vfhQ0gJcQ6DhnOTy60d3c6Zrne+r8Yszj7wpQvhlXrVkSyiEArjwYwsyrylEXnYk8rPK
+         5nM3aLNrupeGm79qVZYmtZO8FewKIJEQQaYEE96F2PiJ7K2/nMOPxh+ISP4uBAi8WqUb
+         N1NJKERjhM8sQLdcTrwivAA9a04ZOnf+Qj+EwL0HziJvjNROuM5Fr0ch6fSGzQHUvJO1
+         d/pQ==;
+        darn=cmrit.ac.in
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@cmrit-ac-in.20230601.gappssmtp.com header.s=20230601 header.b="zu2/Gs0V";
+       spf=pass (google.com: domain of iqac@cmrit.ac.in designates 209.85.220.41 as permitted sender) smtp.mailfrom=iqac@cmrit.ac.in;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=cmrit.ac.in;
+       dara=pass header.i=@cmrit.ac.in
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=cmrit-ac-in.20230601.gappssmtp.com; s=20230601; t=1745487508; x=1746092308; darn=cmrit.ac.in;
+        h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
+         :list-id:mailing-list:precedence:x-original-authentication-results
+         :x-original-sender:cc:to:subject:message-id:date:from:in-reply-to
+         :references:mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=LpjAoZhTwmztYYyza0FGULYHUx8e8VzzUkGPG1mpCfE=;
+        b=psfjJH3aL9pai/LN3BmYmEd+UO+QPhFnMpNRqWuhq1P+ZaQS/lEsaY5AIjfDI+GYqQ
+         jdkfxuOqZ+YDIUYPCcVQ4uQLPaGI048NGx9RDQs8Ak7s5P7q7+gnAaL39cj4C6Afzlic
+         iaRsGWFAXSRVDPK09kVJiqJoMaZe/BnDeA5RcQAd7e8A6qQs2v/jKEQtqG0cwILOVZk0
+         9RVft+0QSXDXws1Dw5BIPejonsAtRoHLbHVm9e1g0vz6n3Y8vdORiIpJoByGE47owObG
+         Z7R3wqwTVRKWQGxyNbfQFAtI/EP/3hcxw646fG/j7B90DE+maqabw9ZqCkUTHKicdiWP
+         QlxQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1745487508; x=1746092308;
+        h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
+         :x-spam-checked-in-group:list-id:mailing-list:precedence
+         :x-original-authentication-results:x-original-sender:cc:to:subject
+         :message-id:date:from:in-reply-to:references:mime-version
+         :x-beenthere:x-beenthere:x-beenthere:x-beenthere:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=LpjAoZhTwmztYYyza0FGULYHUx8e8VzzUkGPG1mpCfE=;
+        b=EpMTty87E6vqMgfUtb9hBoGOCTsV0amWQLFm+xv4rY4bAtBDYCb/YPht2B/bqpboCd
+         glr080U1HG3gzXGcxmNFclSMIXvoECt6LLJZQSBEnlEjPQDHJ1y66duf2+lClmEKq5pb
+         n0J6Bk81E6lEYKQRuiE6UcZeV59wv97R8lYE8zIbemAEylBuPeFF0PXO0ztdlLiAFsA5
+         9Qz5zI/aiZcJx+ElEgVkRcq0tgDCALkfY7+DRPrvLJx6PUYj/vbWREGEPw0fNcPnl8xf
+         5WfLbmnRRxNu+MHokhYkUI8S3Svwncvvmj26SoBc4YDz/ODqeAbrrmCalQgoO4q0M9+1
+         qJEA==
+X-Forwarded-Encrypted: i=2; AJvYcCXzijVkFP1AMbZ1wftMn/5GlZY2gFk3pXqdF5yCxWlizpPUro6nw32o/4K40kr6OTeCbgQ1tJM9vO9U@cmrit.ac.in
+X-Gm-Message-State: AOJu0Yx19czHskn0Fdabb+u17Jc/LwHPJeG+NmXTQ297y8AsjBQpsvwe
+	ssGQ+xyVL4P5RGy9WBT9nhHqkJUIeL8zkNe4brnLRNZRAiSMbVnZG1QIMuX0VxNJ1A==
+X-Google-Smtp-Source: AGHT+IFF9o6rQFRqJ+d0GWUDKXskKrcVmUfhRPymtcEoIanYmWq5iU/X71m08eirCI0jvoGDXs/XCQ==
+X-Received: by 2002:a17:90b:3a05:b0:2ff:5a9d:9390 with SMTP id 98e67ed59e1d1-309ed2704b5mr2901600a91.8.1745487507922;
+        Thu, 24 Apr 2025 02:38:27 -0700 (PDT)
+X-BeenThere: aiml22@cmrit.ac.in; h=ARLLPALuj4DKxDCON1CsCwDOLQ/AtBE1WzbElemWbPFyzn1NWg==
+Received: by 2002:a17:90b:37ce:b0:2dd:58a2:6016 with SMTP id
+ 98e67ed59e1d1-309ebe1b4b9ls37714a91.1.-pod-prod-09-us; Thu, 24 Apr 2025
+ 02:38:26 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCWhFcOMafuRQD2Pe6CMLbGxDwUNSV9u15zvYbWLEyQIVkaUORST6P0BIgLztbAiXcR17h+ct3Y=@cmrit.ac.in
+X-Received: by 2002:a17:90b:6c3:b0:2f9:c144:9d13 with SMTP id 98e67ed59e1d1-309ed31aeeemr3207388a91.24.1745487506486;
+        Thu, 24 Apr 2025 02:38:26 -0700 (PDT)
+X-BeenThere: aeng2022@cmrit.ac.in; h=ARLLPAIMOc02iiP3+t8yU9uV5XrgckYAFA4+v2vsaXFpt1ZtcA==
+Received: by 2002:a17:90b:37ce:b0:2dd:58a2:6016 with SMTP id
+ 98e67ed59e1d1-309ebe1b4b9ls37668a91.1.-pod-prod-09-us; Thu, 24 Apr 2025
+ 02:38:25 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCWN0QL8dtzVyurL/bBZhyw/9oX461wHynC5Y4JhRa6qGDNPTqG85ni0Nwi6zcx/wdaUKZWSDqPJeg==@cmrit.ac.in
+X-Received: by 2002:a17:90b:4ed0:b0:2fe:8282:cb9d with SMTP id 98e67ed59e1d1-309ed31a088mr2821281a91.28.1745487505028;
+        Thu, 24 Apr 2025 02:38:25 -0700 (PDT)
+X-BeenThere: allengstudents@cmrit.ac.in; h=ARLLPAKP0KL4WRb27/cz4BfBIIltiKNXYX4h5w0Fx3w/zJbDqQ==
+Received: by 2002:a17:90b:3d0b:b0:2f8:3555:13c3 with SMTP id
+ 98e67ed59e1d1-309ebe2fc73ls31105a91.2.-pod-prod-09-us; Thu, 24 Apr 2025
+ 02:38:23 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCW4N6n2P3OdGlzDyE3JiY1cvVu2YdsxOataobCS6BVfjD6Ot4Yj3tp5sWz61qsgWGL12vzTf0izvxJ4uYEuzA==@cmrit.ac.in
+X-Received: by 2002:a17:90b:54cd:b0:2ff:618c:a1e9 with SMTP id 98e67ed59e1d1-309ed31a23dmr2404131a91.23.1745487503699;
+        Thu, 24 Apr 2025 02:38:23 -0700 (PDT)
+X-BeenThere: allstudents@cmrit.ac.in; h=ARLLPAKCYHZVBwymfYJpLMB+KFty2pffYtfZgumtLdcmOa4KDw==
+Received: by 2002:a17:90b:37ce:b0:2dd:58a2:6016 with SMTP id
+ 98e67ed59e1d1-309ebe1b4b9ls37626a91.1.-pod-prod-09-us; Thu, 24 Apr 2025
+ 02:38:22 -0700 (PDT)
+X-Received: by 2002:a05:6a20:a121:b0:1f5:839e:ecdd with SMTP id adf61e73a8af0-20444e7acfdmr2378027637.9.1745487502321;
+        Thu, 24 Apr 2025 02:38:22 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1745487502; cv=none;
+        d=google.com; s=arc-20240605;
+        b=luvqRWcfGD1eBJnyxBJ7sq5hpxLO3lCqwmyDbht0pkc8aki5zqXm/RkPMLO0pzQdmp
+         iM+fP1SBmY0QRW8qZniCIH0tcfNY35c9p1AAEKzNgpot7uCEzKyOx0SWbvdeYli3iI1F
+         55xpCdnQy06sGcMNsUqTRXBK9dGtVlH1rYu5P7DUaltEUkaul6ePLa4LzV6eaZSoghgi
+         rv2T4sCzQGBeQx/O0UPpWy0e0F7ieB5nW2pySp7GOwdvgLcce4N1I7ruYVKRxuRoU0pW
+         ejPkl50H4jLRIaGRjlWEgXpuDFvpVlSuOlopYbB4BB57GZvvy/Ht6JTr8I+xiYorvTHl
+         a/DA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:dkim-signature;
+        bh=LpjAoZhTwmztYYyza0FGULYHUx8e8VzzUkGPG1mpCfE=;
+        fh=kbt6Od7GqhQVWyyJN0SsZky+94IVoBljqO7roDf/xCI=;
+        b=khf8AxvDkH7Rvr90jndr+1+NlU4GNPEAubwJs10dKxiPUh/Ex8EGv+LwAUzaBG4PDR
+         IuvwcyVvNCsMz5hlcxuYrBSINx8fzxjt1QSTBAtYjQ0ZXE2xVesIVLtPRUstWkbS58nw
+         qHu0xC5YLEJkgdBSSMw6ZkxkNStItY0nK49XRqb4M0iwFKf07eSsSVIFbGLzRmyg8JRi
+         fzNk2Qtf8TrdDgp90WEb7xrBGa0MzvI0pg8TrozCH8DgePNKhcSSWpig1w7yQ5JTbTQ3
+         CTeihasSM4Kcf+DHEdT7L78a+6l2TeDJNlql5DD1hbhGPFECaGcGG0QtVGRZZjnoH14s
+         KfSA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@cmrit-ac-in.20230601.gappssmtp.com header.s=20230601 header.b="zu2/Gs0V";
+       spf=pass (google.com: domain of iqac@cmrit.ac.in designates 209.85.220.41 as permitted sender) smtp.mailfrom=iqac@cmrit.ac.in;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=cmrit.ac.in;
+       dara=pass header.i=@cmrit.ac.in
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id 41be03b00d2f7-b15f9c513e3sor622092a12.3.2025.04.24.02.38.22
+        for <allstudents@cmrit.ac.in>
+        (Google Transport Security);
+        Thu, 24 Apr 2025 02:38:22 -0700 (PDT)
+Received-SPF: pass (google.com: domain of iqac@cmrit.ac.in designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+X-Gm-Gg: ASbGncu6kQ5vEZvVTYOnbpD5LB2McdGu2qSOpwJ6rgipMfzE0r5AcMkouhd9juIO0uj
+	JlxIaC4T6YzIEpehBQBnDwNySgOcPgq8ticpR6TBvfXsZXjS1ZXUwcwVeutHetZ/Ug7Y1X+p3Qw
+	KoMkSvH/JjQ15bGV40Gg7AWA==
+X-Received: by 2002:a17:90b:2741:b0:2ea:5dea:eb0a with SMTP id
+ 98e67ed59e1d1-309ed24d1f7mr2934568a91.4.1745487501301; Thu, 24 Apr 2025
+ 02:38:21 -0700 (PDT)
+MIME-Version: 1.0
+References: <CAHPCiAkrVDUh3h9mPcfFVy0O9fuxbvx2Nb7FQK27h8aypx1kxw@mail.gmail.com>
+In-Reply-To: <CAHPCiAkrVDUh3h9mPcfFVy0O9fuxbvx2Nb7FQK27h8aypx1kxw@mail.gmail.com>
+From: Dean - Academics and IQAC <iqac@cmrit.ac.in>
+Date: Thu, 24 Apr 2025 15:09:46 +0530
+X-Gm-Features: ATxdqUGZfEj_F95mO7v2aD1e4q4TkqONiRuIcWbFAjofOpK_OxJexzB4El9A1C4
+Message-ID: <CAESn_K03p_1GWxPSJcYFAgc+RDDG+iST9yukrbcNr0fX2cN2rw@mail.gmail.com>
+Subject: Fwd: PARKING VENUE FOR CULTURA'25 FEST
+To: All Students <allstudents@cmrit.ac.in>, All Staff <allstaff@cmrit.ac.in>
+Cc: Principal CMRIT <principal@cmrit.ac.in>
+Content-Type: multipart/alternative; boundary="00000000000079b131063382fa0d"
+X-Original-Sender: iqac@cmrit.ac.in
+X-Original-Authentication-Results: mx.google.com;       dkim=pass
+ header.i=@cmrit-ac-in.20230601.gappssmtp.com header.s=20230601
+ header.b="zu2/Gs0V";       spf=pass (google.com: domain of iqac@cmrit.ac.in
+ designates 209.85.220.41 as permitted sender) smtp.mailfrom=iqac@cmrit.ac.in;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=cmrit.ac.in;
+       dara=pass header.i=@cmrit.ac.in
+Precedence: list
+Mailing-list: list aiml22@cmrit.ac.in; contact aiml22+owners@cmrit.ac.in
+List-ID: <aiml22.cmrit.ac.in>
+X-Spam-Checked-In-Group: allstudents@cmrit.ac.in
+X-Google-Group-Id: 508919867771
+List-Post: <https://groups.google.com/a/cmrit.ac.in/group/aiml22/post>, <mailto:aiml22@cmrit.ac.in>
+List-Help: <https://support.google.com/a/cmrit.ac.in/bin/topic.py?topic=25838>,
+ <mailto:aiml22+help@cmrit.ac.in>
+List-Archive: <https://groups.google.com/a/cmrit.ac.in/group/aiml22/>
+List-Subscribe: <https://groups.google.com/a/cmrit.ac.in/group/aiml22/subscribe>,
+ <mailto:aiml22+subscribe@cmrit.ac.in>
+List-Unsubscribe: <mailto:googlegroups-manage+508919867771+unsubscribe@googlegroups.com>,
+ <https://groups.google.com/a/cmrit.ac.in/group/aiml22/subscribe>
+
+--00000000000079b131063382fa0d
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+---------- Forwarded message ---------
+From: Kashif Ahmed <kashif.a@cmrit.ac.in>
+Date: Thu, Apr 24, 2025 at 3:02=E2=80=AFPM
+Subject: PARKING VENUE FOR CULTURA'25 FEST
+To: Dean - Academics and IQAC <iqac@cmrit.ac.in>
+Cc: Vice Principal CMRIT <viceprincipal@cmrit.ac.in>
+
+
+Dear Mam,
+
+Greetings of the day!
+
+Please forward the mail to all the staff and the students.
+
+All vehicles coming to college on the *25th* *and 26th of April 2025* shoul=
+d
+be parked in *A Block Ground* in *AECS Layout*. No parking will be allowed
+inside the college campus.
+
+Parking Venue Link: https://maps.app.goo.gl/zbdxHMw8XaVJa6pJA
+
+
+*Thanks. Warm regards.*
+*Kashif Ahmed B.E., M.Tech, (Ph.D), MIEI, MISCA*
+
+*Associate Director (Student Affairs)*
+*Cultural **Head*
+*Social Media Manager*
+*Asst. Professor | **Dept. of EEE*
+*CMR Institute of Technology *http://www.cmrit.ac.in/  (*NAAC
+A++ Accredited*)
+#132 | AECS Layout | IT Park Road
+Bengaluru  | 560 037 | Karnataka | INDIA
+Email: kashif.a@cmrit.ac.in
+https://sites.google.com/a/cmrit.ac.in/kashifahmed6522/
+
+*We determine who we are by what we do.*
+
+*Learning is a gift even when PAIN is your teacher.*
+
+
+*Knowledge SPEAKS. Wisdom LISTENS.*
+
+
+--=20
+*Thanks & Regards*
+*Dr. K. Chitra*
+*Dean - Academics and IQAC*
+*Professor & Head of the Department*
+*Department of EEE*
+*CMR Institute of Technology*
+http://www.cmrit.ac.in  (*NAAC A++ Accredited*)
+#132 | AECS Layout | IT Park Road
+Bengaluru  | 560 037 | INDIA
+
+--00000000000079b131063382fa0d
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><br><br><div class=3D"gmail_quote gmail_quote_container"><=
+div dir=3D"ltr" class=3D"gmail_attr">---------- Forwarded message ---------=
+<br>From: <strong class=3D"gmail_sendername" dir=3D"auto">Kashif Ahmed</str=
+ong> <span dir=3D"auto">&lt;<a href=3D"mailto:kashif.a@cmrit.ac.in">kashif.=
+a@cmrit.ac.in</a>&gt;</span><br>Date: Thu, Apr 24, 2025 at 3:02=E2=80=AFPM<=
+br>Subject: PARKING VENUE FOR CULTURA&#39;25 FEST<br>To: Dean - Academics a=
+nd IQAC &lt;<a href=3D"mailto:iqac@cmrit.ac.in">iqac@cmrit.ac.in</a>&gt;<br=
+>Cc: Vice Principal CMRIT &lt;<a href=3D"mailto:viceprincipal@cmrit.ac.in">=
+viceprincipal@cmrit.ac.in</a>&gt;<br></div><br><br><div dir=3D"ltr"><div><s=
+pan class=3D"gmail_default" style=3D"font-family:&quot;comic sans ms&quot;,=
+sans-serif;font-size:small"></span><span style=3D"font-family:&quot;comic s=
+ans ms&quot;,sans-serif"><span class=3D"gmail_default" style=3D"font-family=
+:&quot;comic sans ms&quot;,sans-serif;font-size:small"></span>Dear <span cl=
+ass=3D"gmail_default" style=3D"font-family:&quot;comic sans ms&quot;,sans-s=
+erif;font-size:small"></span>M<span class=3D"gmail_default" style=3D"font-f=
+amily:&quot;comic sans ms&quot;,sans-serif;font-size:small">am</span>,</spa=
+n><br clear=3D"all"></div><div><div><div dir=3D"auto" style=3D"font-family:=
+&quot;comic sans ms&quot;,sans-serif"><br></div><div dir=3D"auto"><font fac=
+e=3D"comic sans ms, sans-serif">Greetings of the day!=C2=A0</font><br><div =
+dir=3D"auto" style=3D"font-family:&quot;comic sans ms&quot;,sans-serif"><br=
+></div><div dir=3D"auto" style=3D"font-family:&quot;comic sans ms&quot;,san=
+s-serif">Please forward the mail to all the staff and the students.</div><d=
+iv dir=3D"auto" style=3D"font-family:&quot;comic sans ms&quot;,sans-serif">=
+<br></div><div dir=3D"auto"><font face=3D"comic sans ms, sans-serif">All ve=
+hicles coming to college on the <b>25th</b>=C2=A0</font><b style=3D"font-fa=
+mily:&quot;comic sans ms&quot;,sans-serif">and 26th of April 2025</b><font =
+face=3D"comic sans ms, sans-serif">=C2=A0should be parked=C2=A0in=C2=A0</fo=
+nt><b><font face=3D"comic sans ms, sans-serif">A Block Ground</font></b><fo=
+nt face=3D"comic sans ms, sans-serif">=C2=A0in=C2=A0<b>AECS Layout</b>. No =
+parking=C2=A0will be allowed inside the college campus.=C2=A0</font></div><=
+/div></div><div><font face=3D"comic sans ms, sans-serif"><br></font></div><=
+div><font face=3D"comic sans ms, sans-serif">Parking Venue Link:=C2=A0<a hr=
+ef=3D"https://maps.app.goo.gl/zbdxHMw8XaVJa6pJA" rel=3D"noreferrer" target=
+=3D"_blank">https://maps.app.goo.gl/zbdxHMw8XaVJa6pJA</a></font></div></div=
+><div><div dir=3D"ltr" class=3D"gmail_signature"><div dir=3D"ltr"><div dir=
+=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr=
+"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div =
+dir=3D"ltr"><div dir=3D"ltr"><br></div></div></div></div></div></div></div>=
+</div></div></div></div></div></div></div><div><div dir=3D"ltr" class=3D"gm=
+ail_signature" data-smartmail=3D"gmail_signature"><div dir=3D"ltr"><div dir=
+=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr=
+"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div =
+dir=3D"ltr"><div dir=3D"ltr"><font size=3D"2" face=3D"comic sans ms, sans-s=
+erif"><b><div><font color=3D"#45818e">Thanks. Warm regards.</font></div><di=
+v dir=3D"ltr" style=3D"color:rgb(153,0,0)"><font size=3D"2" face=3D"comic s=
+ans ms, sans-serif"><br></font></div></b></font><div><font size=3D"2" face=
+=3D"comic sans ms, sans-serif" style=3D"color:rgb(34,34,34)"><b><font color=
+=3D"#38761d">Kashif Ahmed</font><font color=3D"#990000">=C2=A0B.E., M.Tech,=
+ (Ph.D), MIEI, MISCA</font></b></font></div><div><font face=3D"comic sans m=
+s, sans-serif"><b><font color=3D"#0c343d">Associate Director (Student Affai=
+rs)</font><br></b></font><div><div style=3D"color:rgb(34,34,34)"><b style=
+=3D"color:rgb(103,78,167);font-family:&quot;comic sans ms&quot;,sans-serif"=
+>Cultural=C2=A0</b><b style=3D"color:rgb(103,78,167);font-family:&quot;comi=
+c sans ms&quot;,sans-serif">Head</b><br></div><div><font size=3D"2" style=
+=3D"font-family:&quot;comic sans ms&quot;,sans-serif"><b><font color=3D"#07=
+3763">Social Media Manager</font></b></font></div><div><font size=3D"2" sty=
+le=3D"font-family:&quot;comic sans ms&quot;,sans-serif"><b><font color=3D"#=
+a64d79">Asst. Professor |=C2=A0</font></b></font><b style=3D"color:rgb(166,=
+77,121);font-family:&quot;comic sans ms&quot;,sans-serif">Dept. of EEE</b><=
+br></div></div><div style=3D"color:rgb(34,34,34)"><font face=3D"comic sans =
+ms, sans-serif"><font size=3D"2"><b><font color=3D"#674ea7">CMR Institute o=
+f Technology</font><font color=3D"#990000">=C2=A0</font></b></font><a href=
+=3D"http://www.cmrit.ac.in/" style=3D"color:rgb(17,85,204);font-size:12.8px=
+" target=3D"_blank">http://www.cmrit.ac.in/</a>=C2=A0=C2=A0</font><font col=
+or=3D"#cc0000" style=3D"font-family:&quot;comic sans ms&quot;,sans-serif;fo=
+nt-size:large"><span style=3D"font-size:small"></span>(<b>NAAC A+<span>+</s=
+pan>=C2=A0Accredited</b>)</font><font face=3D"comic sans ms, sans-serif"><s=
+pan style=3D"font-size:12.8px;color:rgb(51,102,255)">=C2=A0</span><br></fon=
+t></div><div style=3D"color:rgb(34,34,34)"><font face=3D"comic sans ms, san=
+s-serif"><span style=3D"font-size:12.8px">#132 | AECS Layout | IT Park Road=
+</span><br style=3D"font-size:12.8px"><span style=3D"font-size:12.8px">Beng=
+aluru =C2=A0| 560 037 | Karnataka | INDIA</span><br></font></div><div style=
+=3D"color:rgb(34,34,34)"><font face=3D"comic sans ms, sans-serif">Email:=C2=
+=A0<a href=3D"mailto:kashif.a@cmrit.ac.in" style=3D"color:rgb(17,85,204)" t=
+arget=3D"_blank">kashif.a@cmrit.ac.in</a></font></div><div style=3D"color:r=
+gb(34,34,34)"><font face=3D"comic sans ms, sans-serif"><a href=3D"https://s=
+ites.google.com/a/cmrit.ac.in/kashifahmed6522/" style=3D"color:rgb(17,85,20=
+4);font-size:12.8px" target=3D"_blank">https://sites.google.com/a/cmrit.ac.=
+in/kashifahmed6522/</a><br></font></div><div style=3D"color:rgb(34,34,34)">=
+<font face=3D"comic sans ms, sans-serif"><br></font></div><div style=3D"col=
+or:rgb(34,34,34)"><font color=3D"#ff00ff" face=3D"comic sans ms, sans-serif=
+"><i><b>We determine who we are by what we do.</b></i></font></div><div sty=
+le=3D"color:rgb(34,34,34)"><span style=3D"color:rgb(11,83,148)"><i><b><font=
+ face=3D"comic sans ms, sans-serif"><br></font></b></i></span></div><div st=
+yle=3D"color:rgb(34,34,34)"><span style=3D"color:rgb(11,83,148)"><i><b><fon=
+t face=3D"comic sans ms, sans-serif">Learning is a gift even when PAIN is y=
+our teacher.</font></b></i></span></div><div style=3D"color:rgb(34,34,34)">=
+<span style=3D"color:rgb(153,0,0)"><i><b><font face=3D"comic sans ms, sans-=
+serif"><br></font></b></i></span></div><div style=3D"color:rgb(34,34,34)"><=
+span style=3D"color:rgb(153,0,0)"><i><b><font face=3D"comic sans ms, sans-s=
+erif">Knowledge SPEAKS. Wisdom LISTENS.<br></font></b></i></span></div></di=
+v></div></div></div></div></div></div></div></div></div></div></div></div><=
+/div></div></div>
+</div><div><br clear=3D"all"></div><div><br></div><span class=3D"gmail_sign=
+ature_prefix">-- </span><br><div dir=3D"ltr" class=3D"gmail_signature" data=
+-smartmail=3D"gmail_signature"><div dir=3D"ltr"><div dir=3D"ltr"><div><b st=
+yle=3D"color:rgb(116,27,71);font-family:arial,helvetica,sans-serif"><span s=
+tyle=3D"color:rgb(0,0,255)">Thanks &amp; Regards</span></b><br></div><div><=
+div><div dir=3D"ltr"><b><font color=3D"#990000">Dr. K. Chitra</font></b></d=
+iv><div dir=3D"ltr"><b><font color=3D"#351c75">Dean - Academics and IQAC</f=
+ont></b></div><div dir=3D"ltr"><div><b><font color=3D"#351c75">Professor &a=
+mp; Head of the Department</font></b></div><div><b><font color=3D"#351c75">=
+Department of EEE</font></b></div><div><b><font color=3D"#351c75">CMR Insti=
+tute of Technology</font></b></div></div></div><div dir=3D"ltr"><div><font =
+face=3D"arial, helvetica, sans-serif"><a href=3D"http://www.cmrit.ac.in/" s=
+tyle=3D"color:rgb(17,85,204)" target=3D"_blank"><span style=3D"font-size:9.=
+5pt;line-height:14.5667px;color:rgb(51,51,255);background-image:initial;bac=
+kground-position:initial;background-repeat:initial">http://www.cmrit.ac.in<=
+/span></a><span style=3D"font-size:9.5pt;line-height:14.5667px;color:rgb(51=
+,102,255);background-image:initial;background-position:initial;background-r=
+epeat:initial">=C2=A0 (<b>NAAC A++ Accredited</b>)=C2=A0</span><br></font><=
+/div><div><div dir=3D"ltr"><div style=3D"font-size:12.8px"><span style=3D"f=
+ont-size:9.5pt;line-height:14.5667px"><font face=3D"arial, helvetica, sans-=
+serif"><span style=3D"background-image:initial;background-position:initial;=
+background-repeat:initial">#132 | AECS Layout | IT Park Road</span><br><spa=
+n style=3D"background-image:initial;background-position:initial;background-=
+repeat:initial">Bengaluru =C2=A0| 560 037 | INDIA</span></font></span></div=
+></div></div></div></div></div></div></div></div>
+
+--00000000000079b131063382fa0d--

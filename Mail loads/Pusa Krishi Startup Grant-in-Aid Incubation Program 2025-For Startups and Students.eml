@@ -1,0 +1,404 @@
+Delivered-To: shnk22aiml@cmrit.ac.in
+Received: by 2002:a05:7412:4e1a:b0:145:e80f:8f71 with SMTP id gb26csp3180862rdb;
+        Wed, 16 Apr 2025 01:57:38 -0700 (PDT)
+X-Forwarded-Encrypted: i=4; AJvYcCU1fOWezL2nfMNXI47QrHlJ2ZXH2KZKOMTP5Q3GT/HjHBYddrFvNMplWWbgI8V3fryvUuj1sOc0Iu3a@cmrit.ac.in
+X-Received: by 2002:a17:902:e806:b0:223:5e6a:57ab with SMTP id d9443c01a7336-22c3597ee39mr15522435ad.39.1744793857989;
+        Wed, 16 Apr 2025 01:57:37 -0700 (PDT)
+ARC-Seal: i=3; a=rsa-sha256; t=1744793857; cv=pass;
+        d=google.com; s=arc-20240605;
+        b=F9NEUN6VtC6vOJzPCKhNdcmF4yCeLKciVlZUtr9UCpxVRlssWrSCxM1y55bqMTVHJc
+         9ojq6mLtyxUuPLmcoCbP6VZHryLPY7fxsXVxUGJxpUn75y13AUEB7q/Vrg6lQMsfKPqB
+         vbp+oD2FrrRNkIoHG1PSWl/eA0BuTmfZRZeiSiw2EbpVf/MiLmrGfT5K3dNw9VNNVaiY
+         TXo5FELJG7lremN2+2ztuah8v22O49GEhh50GDBl2PErzPZMHYKubv9gz7pki/ZkI2Hd
+         WYKJtZhSS0URLDCNDm+r4sEuXzOe1onblmkiQglcrFWhhkK4NmRVTCG9rXcZMoVOzQcE
+         RQDA==
+ARC-Message-Signature: i=3; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
+         :list-id:mailing-list:precedence:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version;
+        bh=JambWe77tKPLhMNStCVDz698Rr6S6oLxiK1pmT2kxOM=;
+        fh=y9hJQEdXfNeF5MyDcth9czYCi9uwXl8wEvBrQFhzOpc=;
+        b=Ri5hmAifuCJZmMtgDdLYLYXXYzB9ZC2KHAiNuiksuPlI48BIvq6deJknAEhxAMlu6S
+         6G0W14Zwk44vzPYjy9E58eaybMsmxa4bOlhEmtDvM0WxRibufH4AaNwt29YZ4R0tZ+9A
+         PmDCL+NH6BDnpfI0tvSNZTW0gfeMzgAd4riJ/bU3Ni069isoiCwkyBpwbzuFZIKi7CTQ
+         DrcGGhD5t1v/ptOeUZjkjNwe0My2PTTQyEELh5/MM5Lua2AdHIFEU48IXuLqw0U2POdN
+         GIxUSrklB/S8R5ZriAOOahX0NAkSo/F5Ozkr215jXbD+koDAEitgJTrmppMp0/32OJFY
+         5eQw==;
+        dara=google.com
+ARC-Authentication-Results: i=3; mx.google.com;
+       arc=pass (i=2 spf=pass spfdomain=cmrit.ac.in dkim=pass dkdomain=cmrit-ac-in.20230601.gappssmtp.com dmarc=pass fromdomain=cmrit.ac.in);
+       spf=pass (google.com: domain of aiml22+bncbckoflhasigbbahc7w7qmgqen2udlpi@cmrit.ac.in designates 209.85.220.69 as permitted sender) smtp.mailfrom=aiml22+bncBCKOFLHASIGBBAHC7W7QMGQEN2UDLPI@cmrit.ac.in;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=cmrit.ac.in;
+       dara=pass header.i=@cmrit.ac.in
+Return-Path: <aiml22+bncBCKOFLHASIGBBAHC7W7QMGQEN2UDLPI@cmrit.ac.in>
+Received: from mail-sor-f69.google.com (mail-sor-f69.google.com. [209.85.220.69])
+        by mx.google.com with SMTPS id d9443c01a7336-22ac7b4530bsor61950025ad.1.2025.04.16.01.57.37
+        for <shnk22aiml@cmrit.ac.in>
+        (Google Transport Security);
+        Wed, 16 Apr 2025 01:57:37 -0700 (PDT)
+Received-SPF: pass (google.com: domain of aiml22+bncbckoflhasigbbahc7w7qmgqen2udlpi@cmrit.ac.in designates 209.85.220.69 as permitted sender) client-ip=209.85.220.69;
+Authentication-Results: mx.google.com;
+       arc=pass (i=2 spf=pass spfdomain=cmrit.ac.in dkim=pass dkdomain=cmrit-ac-in.20230601.gappssmtp.com dmarc=pass fromdomain=cmrit.ac.in);
+       spf=pass (google.com: domain of aiml22+bncbckoflhasigbbahc7w7qmgqen2udlpi@cmrit.ac.in designates 209.85.220.69 as permitted sender) smtp.mailfrom=aiml22+bncBCKOFLHASIGBBAHC7W7QMGQEN2UDLPI@cmrit.ac.in;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=cmrit.ac.in;
+       dara=pass header.i=@cmrit.ac.in
+ARC-Seal: i=2; a=rsa-sha256; t=1744793857; cv=pass;
+        d=google.com; s=arc-20240605;
+        b=Wx/rvxxgSu8nXRjTCDIg6/L4V8lHHZlwpBdhziQztczKf+AjvrJh4j3QX+QR/e/LvX
+         D9dCX+HjVnsLiyf66mccuMptWyktG6mbPI08zLkPuXh2COlKsdDm+6Rx44HlXUH0VjKk
+         kUPQay+6MZOYkmJRXtXUMc6wSwqhg3Vm6wf7dzt2Qe5j1zdCCo5I2TUHMRiOVcL+gDA8
+         PlrHqrdF4fUjMevdupLcwIlsWk1avmcEy6Pk08XQ2hzT3lEczJ8ksWd1WaDq7NOe5sVp
+         KlCr+OkkpAqeYnxdt3+03XoAstas3jEGoZiWawKp6BmSgY7Ae81qwaSe/EZTkRvkONtV
+         8nZw==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
+         :list-id:mailing-list:precedence:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version;
+        bh=JambWe77tKPLhMNStCVDz698Rr6S6oLxiK1pmT2kxOM=;
+        fh=y9hJQEdXfNeF5MyDcth9czYCi9uwXl8wEvBrQFhzOpc=;
+        b=MYm9TNx0es/8UnWZAr4RyYeCI3YBSk7rmCpFJWKQWtT0juDpBb70X+gir1GBgL5IYP
+         AGyVSC5E2JS4Q0gK/WtrTLdx0xhpWMy4XU4qg6PcO62Kl8icp/c2EOolVl1m+ceiaCt4
+         2AG90ia+DkJrcjazMokCCT6QF/zmNwb+D1i5RqrWsAInXz7oszqhfS4kc/ZqAcXBw0Gr
+         Cgw/yRNs9PvbzHZEg3Xxscssu1yhMhK4RkHIqeV+dAfNyBVIsvO+n/nL3moIIvFxnyaP
+         Bhr5hAtiEedmBT+cL83P3loHraL7qZ774+HjKqf5w3YtsQhRNsLiJnL1jfPQzwrIZbQL
+         e9LA==;
+        darn=cmrit.ac.in
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@cmrit-ac-in.20230601.gappssmtp.com header.s=20230601 header.b=JUmL8BAt;
+       spf=pass (google.com: domain of iqac@cmrit.ac.in designates 209.85.220.41 as permitted sender) smtp.mailfrom=iqac@cmrit.ac.in;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=cmrit.ac.in;
+       dara=pass header.i=@cmrit.ac.in
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1744793857; x=1745398657;
+        h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
+         :x-spam-checked-in-group:list-id:mailing-list:precedence
+         :x-original-authentication-results:x-original-sender:cc:to:subject
+         :message-id:date:from:in-reply-to:references:mime-version
+         :x-beenthere:x-beenthere:x-beenthere:x-beenthere:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=JambWe77tKPLhMNStCVDz698Rr6S6oLxiK1pmT2kxOM=;
+        b=ekXrmFl0MVFdeyQoMzJ20j2gj5Iys1Ks3cj/YM5EyVPbrfu4yNhZrWdLTbKBJ4Ybo0
+         68bPAGq2610ILHBFi6WxCp1QoqOQ11LsVaLGqNjVtP6AZgYoY7Z67PEEz6EhV+ms72G4
+         rQwD5iy0hNPVo9VYu33RrnyGuiY5B2ZAnYCoq/EbnZ6wcOR3CxKCKK/qQmma7fwOLh/p
+         yJt3OwIheJcn4ZM2h9O3x/qGOfYu5mIs/yi4gM8r3dNzLXU9IpvVWp24EkR7qGeqjlJb
+         JPCALRsDnCbsXAe73tQ7kjoUYhT1BmjAdBg6HrXqhCfaEZvVc1eBSmfXMdaytDrO5kZQ
+         48Ow==
+X-Forwarded-Encrypted: i=2; AJvYcCXSi65J8U1jtUUpYPNlH+61PAoWwkK34ArvMSqG/6Qr5VGeG5I0oM7WeM+VLJAIlZUXEZdtIsial8PL@cmrit.ac.in
+X-Gm-Message-State: AOJu0Yy30Ac10DH7WPXEdFtr7K2R5jUJhu6FHKCe4eMazK5+ES0LUjfW
+	rT4VhPrpnecnLH2Zzsaf2sueAGOHOncyRsHF/QivFYbtSYcvWRVqy3Zua9KOFNQPOg==
+X-Google-Smtp-Source: AGHT+IFIpV8WxYBhPzFtIlrve7IsB53qNtmtpXXmQw9TecbZBPI05GXCIY5ZFkY6OlejysHNrqWTpQ==
+X-Received: by 2002:a17:902:ce0d:b0:215:3862:603a with SMTP id d9443c01a7336-22c35974835mr7180535ad.10.1744793857128;
+        Wed, 16 Apr 2025 01:57:37 -0700 (PDT)
+X-BeenThere: aiml22@cmrit.ac.in; h=ARLLPAIt+iXFz8t69mt3NVXRTlL06NPjWRaQsHESIT5iUQKigw==
+Received: by 2002:a17:902:d588:b0:21f:7c14:e7f5 with SMTP id
+ d9443c01a7336-22acf0dccb8ls66237435ad.0.-pod-prod-01-us; Wed, 16 Apr 2025
+ 01:57:35 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCUfVAneS1oww0R0J77MwFgZRIMJZR8GzypAHRJY4ZU98wEkuQEeqnRvh1Znept3bF4by/bMwpw=@cmrit.ac.in
+X-Received: by 2002:a17:902:e54a:b0:219:e4b0:4286 with SMTP id d9443c01a7336-22c3590a349mr16562205ad.29.1744793855690;
+        Wed, 16 Apr 2025 01:57:35 -0700 (PDT)
+X-BeenThere: aeng2022@cmrit.ac.in; h=ARLLPAL/bKbkWNY4GSa8HxWM1ToBIq+hpx65cXV+W27XAJrpxw==
+Received: by 2002:a17:902:d588:b0:21f:7c14:e7f5 with SMTP id
+ d9443c01a7336-22acf0dccb8ls66236935ad.0.-pod-prod-01-us; Wed, 16 Apr 2025
+ 01:57:34 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCVqstVGK+QErk05RuamYtS53BsGsYVB51fmQHoJ1Zo7Yh1FSN0tXZlT1xjOiLrVkQwwzFx4LDEImg==@cmrit.ac.in
+X-Received: by 2002:a17:903:1a44:b0:224:1935:fb91 with SMTP id d9443c01a7336-22c358fd434mr15643265ad.27.1744793854143;
+        Wed, 16 Apr 2025 01:57:34 -0700 (PDT)
+X-BeenThere: allengstudents@cmrit.ac.in; h=ARLLPAIgdJYIqrjNF3szRpa4u8iU1bq6ND4nd/3ZfB2Lcxsn1A==
+Received: by 2002:a17:902:e541:b0:223:ffd3:d815 with SMTP id
+ d9443c01a7336-22acf2532abls62854675ad.1.-pod-prod-01-us; Wed, 16 Apr 2025
+ 01:57:33 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCW+lvCowttg/T19MYjwO6Je5qXV3vfR0tYCgUXi3g6iK7dVY8/3W9Eq2aikmidqgwH30wShQiceLjuf1ZDVQg==@cmrit.ac.in
+X-Received: by 2002:a17:903:2c8:b0:224:76f:9e4a with SMTP id d9443c01a7336-22c358d88b8mr17206625ad.14.1744793852868;
+        Wed, 16 Apr 2025 01:57:32 -0700 (PDT)
+X-BeenThere: allstudents@cmrit.ac.in; h=ARLLPAIrOgNUxrBai9Yp+Taw16U/VsofodzyAs9MYVACwDKfEQ==
+Received: by 2002:a17:902:d588:b0:21f:7c14:e7f5 with SMTP id
+ d9443c01a7336-22acf0dccb8ls66236555ad.0.-pod-prod-01-us; Wed, 16 Apr 2025
+ 01:57:31 -0700 (PDT)
+X-Received: by 2002:a17:903:1a44:b0:224:1935:fb91 with SMTP id d9443c01a7336-22c358fd434mr15641785ad.27.1744793851365;
+        Wed, 16 Apr 2025 01:57:31 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1744793851; cv=none;
+        d=google.com; s=arc-20240605;
+        b=dAiQrougoh5YV8v9+9cHRZcB5dfrNJ/cWVcFh2mPXBjjh+TS0q0p1JOkSak4g9mqzN
+         +BIphTHvvVOspiZEYgdKrMJxzXjzuQCEfeB5A2JFJRLaUks8gOuzTvhW2SPp9xplx03c
+         3cP3FUiyTPxr+HsYw/4UOzvFHmjiNDk2zHvKLRyYD2VHzynUg2xx5e/adnXFqnphgJwS
+         Sz+Upu0J7yEFTGromW8QMKOIOvFDnqmVRoGym7EECa/Tp7cV+qqGZeFJnN3hNhGKsrYs
+         t3ze1OOmesSx75niEM42ygR2tYkLAKNtY8MLU0xHvDHKCTvx1C1PHUkf4RgjcBL5dwEg
+         wqTg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:dkim-signature;
+        bh=JambWe77tKPLhMNStCVDz698Rr6S6oLxiK1pmT2kxOM=;
+        fh=kbt6Od7GqhQVWyyJN0SsZky+94IVoBljqO7roDf/xCI=;
+        b=YKrI0obLlCKuItYPUHtIuub6oglIxhN5Qz1eX9HQ9vlZ86RXmKfqYgTp434qMUUgYJ
+         EAEg7QNi1hN5TC99lKyhbNFUpoobS6XmCR29k/UEVb0bRMV+n9/7GkuW8HncpPyZMClf
+         QoA+K0js6tH/zCiuAFdXTyWanQm5pm20ZEqPZ/nX2oiPfZ1AGcmR9tDCtRCSfl2vh4o/
+         PVx3PEaH5GQ84BSk7zAtSD0Q5QijAJaYgYhbE1r4zVbXGf02HX3EJAnvK099mamyRl6x
+         eWCgX0IJ8NmgE1e9BvUuc1bAmUe07NMxeeoa0EFR+vYJQbxL9In0WM//FLhSWXLAPHY+
+         Fyuw==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@cmrit-ac-in.20230601.gappssmtp.com header.s=20230601 header.b=JUmL8BAt;
+       spf=pass (google.com: domain of iqac@cmrit.ac.in designates 209.85.220.41 as permitted sender) smtp.mailfrom=iqac@cmrit.ac.in;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=cmrit.ac.in;
+       dara=pass header.i=@cmrit.ac.in
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id d9443c01a7336-22ac75bceb7sor104497465ad.0.2025.04.16.01.57.31
+        for <allstudents@cmrit.ac.in>
+        (Google Transport Security);
+        Wed, 16 Apr 2025 01:57:31 -0700 (PDT)
+Received-SPF: pass (google.com: domain of iqac@cmrit.ac.in designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+X-Gm-Gg: ASbGnctaei6rKDoyZhk9KFFyb5LPdqxlAFn0TZ8+WDi1QaZFflC9wF4O3rwhsixZxAd
+	dMCAv1vAYyMmIANLGSxbaEc1zYxreMsA8j79QDCI4iw6NOlHF7MYow53onEA3QmCZm8fUSgutS9
+	MUM5YiaqyRHiGo8eucdVZH
+X-Received: by 2002:a17:903:40ce:b0:223:fb3a:8631 with SMTP id
+ d9443c01a7336-22c358ebfe1mr19162105ad.24.1744793850356; Wed, 16 Apr 2025
+ 01:57:30 -0700 (PDT)
+MIME-Version: 1.0
+References: <010901963d5c9c91-a853d18d-3243-4aa9-b76b-a59ac6024043-000000@ap-south-1.amazonses.com>
+ <CAJr3P+46A4AfuEv6dxNMHkXyUQ1LxWsQuNU90RBm_LV=7Qt9Cw@mail.gmail.com>
+In-Reply-To: <CAJr3P+46A4AfuEv6dxNMHkXyUQ1LxWsQuNU90RBm_LV=7Qt9Cw@mail.gmail.com>
+From: Dean - Academics and IQAC <iqac@cmrit.ac.in>
+Date: Wed, 16 Apr 2025 14:28:50 +0530
+X-Gm-Features: ATxdqUGuwtDpxLOa8ad-WNLnxrcCDKl7OXhxuKR7Zv-heATX1RSwhdFd8Sv4uhU
+Message-ID: <CAESn_K3cfFsAmCFsHJhjpZu_f5KbJC1KCtiLt6YJ8ux7Ti0r3A@mail.gmail.com>
+Subject: Fwd: Pusa Krishi Startup Grant-in-Aid Incubation Program 2025-For
+ Startups and Students
+To: All Students <allstudents@cmrit.ac.in>, All Staff <allstaff@cmrit.ac.in>
+Cc: Principal CMRIT <principal@cmrit.ac.in>
+Content-Type: multipart/alternative; boundary="000000000000a841b40632e17943"
+X-Original-Sender: iqac@cmrit.ac.in
+X-Original-Authentication-Results: mx.google.com;       dkim=pass
+ header.i=@cmrit-ac-in.20230601.gappssmtp.com header.s=20230601
+ header.b=JUmL8BAt;       spf=pass (google.com: domain of iqac@cmrit.ac.in
+ designates 209.85.220.41 as permitted sender) smtp.mailfrom=iqac@cmrit.ac.in;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=cmrit.ac.in;
+       dara=pass header.i=@cmrit.ac.in
+Precedence: list
+Mailing-list: list aiml22@cmrit.ac.in; contact aiml22+owners@cmrit.ac.in
+List-ID: <aiml22.cmrit.ac.in>
+X-Spam-Checked-In-Group: allstudents@cmrit.ac.in
+X-Google-Group-Id: 508919867771
+List-Post: <https://groups.google.com/a/cmrit.ac.in/group/aiml22/post>, <mailto:aiml22@cmrit.ac.in>
+List-Help: <https://support.google.com/a/cmrit.ac.in/bin/topic.py?topic=25838>,
+ <mailto:aiml22+help@cmrit.ac.in>
+List-Archive: <https://groups.google.com/a/cmrit.ac.in/group/aiml22/>
+List-Subscribe: <https://groups.google.com/a/cmrit.ac.in/group/aiml22/subscribe>,
+ <mailto:aiml22+subscribe@cmrit.ac.in>
+List-Unsubscribe: <mailto:googlegroups-manage+508919867771+unsubscribe@googlegroups.com>,
+ <https://groups.google.com/a/cmrit.ac.in/group/aiml22/subscribe>
+
+--000000000000a841b40632e17943
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+---------- Forwarded message ---------
+From: CMRIT . <info@cmrit.ac.in>
+Date: Wed, Apr 16, 2025 at 2:11=E2=80=AFPM
+Subject: Fwd: Pusa Krishi Startup Grant-in-Aid Incubation Program 2025-For
+Startups and Students
+To: Dean - Academics and IQAC <iqac@cmrit.ac.in>
+
+
+
+
+---------- Forwarded message ---------
+From: Pusa Krishi <notification@accubate.app>
+Date: Wed, Apr 16, 2025 at 12:20=E2=80=AFPM
+Subject: Pusa Krishi Startup Grant-in-Aid Incubation Program 2025-For
+Startups and Students
+To: <info@cmrit.ac.in>
+
+
+[image: Landing Page (1).png]
+*Dear Innovator,*
+
+We are excited to announce that *Pusa Krishi, ICAR=E2=80=93Indian Agricultu=
+ral
+Research Institute (ICAR-IARI)*, with the esteemed support of the *Ministry
+of Agriculture & Farmers Welfare, Government of India*, is now accepting
+applications for the *Grant-in-Aid Incubation Program 2025*.
+This flagship initiative aims to *empower agri-innovators*, startups, and
+students across India with the funding, mentorship, and ecosystem support
+required to scale their ideas into impactful solutions.
+
+*Who Can Apply?*
+=F0=9F=8C=B1 *Students with an innovative idea*
+=E2=9E=A1=EF=B8=8F Eligible for up to *=E2=82=B94 lakhs* (No legal entity r=
+equired)
+=F0=9F=94=A7 *Startups at idea or prototype stage*
+=E2=9E=A1=EF=B8=8F Eligible for up to *=E2=82=B95 lakhs*
+=F0=9F=9A=80 *Startups with market-ready product or at revenue stage*
+=E2=9E=A1=EF=B8=8F Eligible for up to *=E2=82=B925 lakhs*
+
+*What You Will Receive:*
+=E2=9C=85 *Grant-in-Aid funding* tailored to your stage of development
+=E2=9C=85 *Mentorship from India=E2=80=99s top agri-scientists and domain e=
+xperts*
+=E2=9C=85 *Guidance from leading industry professionals*
+=E2=9C=85 *Opportunities for paid pilots* with partner organizations
+=E2=9C=85 *Investor connects and networking opportunities* for future fundi=
+ng
+Whether you are a student looking to build your first prototype or a
+startup ready to scale, this program provides the ideal launchpad for your
+agri-tech journey.
+
+=F0=9F=97=93=EF=B8=8F* Application Deadline: 30th April 2025*
+=F0=9F=91=89 *Apply Now:* https://pusakrishi.accubate.app/ext/form/3395/1/a=
+pply
+<https://7dbrqqpe.r.ap-south-1.awstrack.me/L0/https:%2F%2Fpusakrishi.accuba=
+te.app%2Fext%2Fform%2F3395%2F1%2Fapply%2522%2520%255Ct%2520%2522_new/1/0109=
+01963d5c9c91-a853d18d-3243-4aa9-b76b-a59ac6024043-000000/PC5DvV8n919TIesQ8K=
+11dS1zSCI=3D203>
+=F0=9F=8C=90 *More Info:* https://pusakrishi.in/
+<https://7dbrqqpe.r.ap-south-1.awstrack.me/L0/https:%2F%2Fpusakrishi.in%2F%=
+2522%2520%255Ct%2520%2522_new/1/010901963d5c9c91-a853d18d-3243-4aa9-b76b-a5=
+9ac6024043-000000/mOv_RV_vfAgmx3FuTeLCST6FRgY=3D203>
+
+*Don=E2=80=99t miss this chance to bring your idea to life and become a par=
+t of
+India=E2=80=99s agri-innovation revolution.*
+
+We look forward to receiving your application!
+
+Warm regards,
+
+*Team Pusa Krishi*
+ICAR=E2=80=93Indian Agricultural Research Institute
+New Delhi
+=E2=9C=89=EF=B8=8F communication@pusakrishi.in | =F0=9F=93=9E 8700183709
+=F0=9F=8C=90 https://pusakrishi.in/
+<https://7dbrqqpe.r.ap-south-1.awstrack.me/L0/https:%2F%2Fpusakrishi.in%2F%=
+2522%2520%255Ct%2520%2522_new/2/010901963d5c9c91-a853d18d-3243-4aa9-b76b-a5=
+9ac6024043-000000/oVo0662J1NOZ1a9R2N453uOwlDA=3D203>
+Register Now
+<https://7dbrqqpe.r.ap-south-1.awstrack.me/L0/https:%2F%2Fpusakrishi.accuba=
+te.app%2Fext%2Fform%2F3395%2F1%2Fapply/1/010901963d5c9c91-a853d18d-3243-4aa=
+9-b76b-a59ac6024043-000000/M9YCC5o2pW5v3oSLds9dX8VADVI=3D203>
+
+
+--=20
+*Thanks & Regards*
+*Dr. K. Chitra*
+*Dean - Academics and IQAC*
+*Professor & Head of the Department*
+*Department of EEE*
+*CMR Institute of Technology*
+http://www.cmrit.ac.in  (*NAAC A++ Accredited*)
+#132 | AECS Layout | IT Park Road
+Bengaluru  | 560 037 | INDIA
+
+--000000000000a841b40632e17943
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><br><br><div class=3D"gmail_quote gmail_quote_container"><=
+div dir=3D"ltr" class=3D"gmail_attr">---------- Forwarded message ---------=
+<br>From: <strong class=3D"gmail_sendername" dir=3D"auto">CMRIT .</strong> =
+<span dir=3D"auto">&lt;<a href=3D"mailto:info@cmrit.ac.in">info@cmrit.ac.in=
+</a>&gt;</span><br>Date: Wed, Apr 16, 2025 at 2:11=E2=80=AFPM<br>Subject: F=
+wd: Pusa Krishi Startup Grant-in-Aid Incubation Program 2025-For Startups a=
+nd Students<br>To: Dean - Academics and IQAC &lt;<a href=3D"mailto:iqac@cmr=
+it.ac.in">iqac@cmrit.ac.in</a>&gt;<br></div><br><br><div dir=3D"ltr"><br><b=
+r><div class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">--------=
+-- Forwarded message ---------<br>From: <strong class=3D"gmail_sendername" =
+dir=3D"auto">Pusa Krishi</strong> <span dir=3D"auto">&lt;<a href=3D"mailto:=
+notification@accubate.app" target=3D"_blank">notification@accubate.app</a>&=
+gt;</span><br>Date: Wed, Apr 16, 2025 at 12:20=E2=80=AFPM<br>Subject: Pusa =
+Krishi Startup Grant-in-Aid Incubation Program 2025-For Startups and Studen=
+ts<br>To:  &lt;<a href=3D"mailto:info@cmrit.ac.in" target=3D"_blank">info@c=
+mrit.ac.in</a>&gt;<br></div><br><br><div style=3D"padding:0% 0% 0% 0%"><div=
+ style=3D"padding:0% 0% 0% 0%"><table width=3D"100%"><tbody><tr><td style=
+=3D"width:100%;padding:0% 0% 0% 0%;min-height:80px;text-align:center"><img =
+style=3D"width:100%;display:unset" alt=3D"Landing Page (1).png" src=3D"http=
+s://api-legacy.accubate.app/document/pusakrishi/fb0ddb80-f38a-45be-94a5-08d=
+7f32851ce"></td></tr></tbody></table></div><div style=3D"padding:0% 0% 0% 0=
+%"><table width=3D"100%"><tbody><tr><td style=3D"width:100%;padding:0% 0% 0=
+% 0%;min-height:80px;color:#000000;text-align:left"><div><strong>Dear Innov=
+ator,</strong></div><div><br></div><div>We are excited to announce that <st=
+rong>Pusa Krishi, ICAR=E2=80=93Indian Agricultural Research Institute (ICAR=
+-IARI)</strong>, with the esteemed support of the <strong>Ministry of Agric=
+ulture &amp; Farmers Welfare, Government of India</strong>, is now acceptin=
+g applications for the <strong>Grant-in-Aid Incubation Program 2025</strong=
+>.</div><div>This flagship initiative aims to <strong>empower agri-innovato=
+rs</strong>, startups, and students across India with the funding, mentorsh=
+ip, and ecosystem support required to scale their ideas into impactful solu=
+tions.</div><div><br></div><div><strong>Who Can Apply?</strong></div><div>=
+=F0=9F=8C=B1 <strong>Students with an innovative idea</strong></div><div> =
+=E2=9E=A1=EF=B8=8F Eligible for up to <strong>=E2=82=B94 lakhs</strong> (No=
+ legal entity required)</div><div>=F0=9F=94=A7 <strong>Startups at idea or =
+prototype stage</strong></div><div> =E2=9E=A1=EF=B8=8F Eligible for up to <=
+strong>=E2=82=B95 lakhs</strong></div><div>=F0=9F=9A=80 <strong>Startups wi=
+th market-ready product or at revenue stage</strong></div><div> =E2=9E=A1=
+=EF=B8=8F Eligible for up to <strong>=E2=82=B925 lakhs</strong></div><div><=
+br></div><div><strong>What You Will Receive:</strong></div><div> =E2=9C=85 =
+<strong>Grant-in-Aid funding</strong> tailored to your stage of development=
+</div><div> =E2=9C=85 <strong>Mentorship from India=E2=80=99s top agri-scie=
+ntists and domain experts</strong></div><div> =E2=9C=85 <strong>Guidance fr=
+om leading industry professionals</strong></div><div> =E2=9C=85 <strong>Opp=
+ortunities for paid pilots</strong> with partner organizations</div><div> =
+=E2=9C=85 <strong>Investor connects and networking opportunities</strong> f=
+or future funding</div><div>Whether you are a student looking to build your=
+ first prototype or a startup ready to scale, this program provides the ide=
+al launchpad for your agri-tech journey.</div><div><br></div><div>=F0=9F=97=
+=93=EF=B8=8F<strong> Application Deadline: 30th April 2025</strong></div><d=
+iv>=F0=9F=91=89 <strong>Apply Now:</strong> <a rel=3D"noopener noreferrer" =
+href=3D"https://7dbrqqpe.r.ap-south-1.awstrack.me/L0/https:%2F%2Fpusakrishi=
+.accubate.app%2Fext%2Fform%2F3395%2F1%2Fapply%2522%2520%255Ct%2520%2522_new=
+/1/010901963d5c9c91-a853d18d-3243-4aa9-b76b-a59ac6024043-000000/PC5DvV8n919=
+TIesQ8K11dS1zSCI=3D203" target=3D"_blank">https://pusakrishi.accubate.app/e=
+xt/form/3395/1/apply</a></div><div> =F0=9F=8C=90 <strong>More Info:</strong=
+> <a rel=3D"noopener noreferrer" href=3D"https://7dbrqqpe.r.ap-south-1.awst=
+rack.me/L0/https:%2F%2Fpusakrishi.in%2F%2522%2520%255Ct%2520%2522_new/1/010=
+901963d5c9c91-a853d18d-3243-4aa9-b76b-a59ac6024043-000000/mOv_RV_vfAgmx3FuT=
+eLCST6FRgY=3D203" target=3D"_blank">https://pusakrishi.in/</a></div><div><b=
+r></div><div><strong>Don=E2=80=99t miss this chance to bring your idea to l=
+ife and become a part of India=E2=80=99s agri-innovation revolution.</stron=
+g></div><div><br></div><div>We look forward to receiving your application!<=
+/div><div><br></div><div>Warm regards,</div><div><br></div><div><strong>Tea=
+m Pusa Krishi</strong></div><div>ICAR=E2=80=93Indian Agricultural Research =
+Institute</div><div>New Delhi</div><div>=E2=9C=89=EF=B8=8F <a href=3D"mailt=
+o:communication@pusakrishi.in" target=3D"_blank">communication@pusakrishi.i=
+n</a> | =F0=9F=93=9E 8700183709</div><div>=F0=9F=8C=90 <a rel=3D"noopener n=
+oreferrer" href=3D"https://7dbrqqpe.r.ap-south-1.awstrack.me/L0/https:%2F%2=
+Fpusakrishi.in%2F%2522%2520%255Ct%2520%2522_new/2/010901963d5c9c91-a853d18d=
+-3243-4aa9-b76b-a59ac6024043-000000/oVo0662J1NOZ1a9R2N453uOwlDA=3D203" targ=
+et=3D"_blank">https://pusakrishi.in/</a></div></td></tr></tbody></table></d=
+iv><div style=3D"padding:0% 0% 0% 0%"><table width=3D"100%"><tbody><tr><td =
+style=3D"width:100%;padding:2% 0% 0% 0%;min-height:80px;color:#ffffff"><div=
+ align=3D"center"><a style=3D"background:#782e5e;border-radius:7px;color:#f=
+fffff;padding:15px 20px;text-align:center;font-size:16px" href=3D"https://7=
+dbrqqpe.r.ap-south-1.awstrack.me/L0/https:%2F%2Fpusakrishi.accubate.app%2Fe=
+xt%2Fform%2F3395%2F1%2Fapply/1/010901963d5c9c91-a853d18d-3243-4aa9-b76b-a59=
+ac6024043-000000/M9YCC5o2pW5v3oSLds9dX8VADVI=3D203" target=3D"_blank">Regis=
+ter Now</a></div></td></tr></tbody></table></div></div>
+<img alt=3D"" src=3D"https://7dbrqqpe.r.ap-south-1.awstrack.me/I0/010901963=
+d5c9c91-a853d18d-3243-4aa9-b76b-a59ac6024043-000000/474KbdfqSiYbbMAlrQLN5L8=
+Z82Y=3D203" style=3D"display:none;width:1px;height:1px">
+</div></div>
+</div><div><br clear=3D"all"></div><div><br></div><span class=3D"gmail_sign=
+ature_prefix">-- </span><br><div dir=3D"ltr" class=3D"gmail_signature" data=
+-smartmail=3D"gmail_signature"><div dir=3D"ltr"><div dir=3D"ltr"><div><b st=
+yle=3D"color:rgb(116,27,71);font-family:arial,helvetica,sans-serif"><span s=
+tyle=3D"color:rgb(0,0,255)">Thanks &amp; Regards</span></b><br></div><div><=
+div><div dir=3D"ltr"><b><font color=3D"#990000">Dr. K. Chitra</font></b></d=
+iv><div dir=3D"ltr"><b><font color=3D"#351c75">Dean - Academics and IQAC</f=
+ont></b></div><div dir=3D"ltr"><div><b><font color=3D"#351c75">Professor &a=
+mp; Head of the Department</font></b></div><div><b><font color=3D"#351c75">=
+Department of EEE</font></b></div><div><b><font color=3D"#351c75">CMR Insti=
+tute of Technology</font></b></div></div></div><div dir=3D"ltr"><div><font =
+face=3D"arial, helvetica, sans-serif"><a href=3D"http://www.cmrit.ac.in/" s=
+tyle=3D"color:rgb(17,85,204)" target=3D"_blank"><span style=3D"font-size:9.=
+5pt;line-height:14.5667px;color:rgb(51,51,255);background-image:initial;bac=
+kground-position:initial;background-repeat:initial">http://www.cmrit.ac.in<=
+/span></a><span style=3D"font-size:9.5pt;line-height:14.5667px;color:rgb(51=
+,102,255);background-image:initial;background-position:initial;background-r=
+epeat:initial">=C2=A0 (<b>NAAC A++ Accredited</b>)=C2=A0</span><br></font><=
+/div><div><div dir=3D"ltr"><div style=3D"font-size:12.8px"><span style=3D"f=
+ont-size:9.5pt;line-height:14.5667px"><font face=3D"arial, helvetica, sans-=
+serif"><span style=3D"background-image:initial;background-position:initial;=
+background-repeat:initial">#132 | AECS Layout | IT Park Road</span><br><spa=
+n style=3D"background-image:initial;background-position:initial;background-=
+repeat:initial">Bengaluru =C2=A0| 560 037 | INDIA</span></font></span></div=
+></div></div></div></div></div></div></div></div>
+
+--000000000000a841b40632e17943--

@@ -1,0 +1,576 @@
+Delivered-To: shnk22aiml@cmrit.ac.in
+Received: by 2002:a05:7108:3b0f:b0:402:288b:55c7 with SMTP id ba15csp5868784gdb;
+        Sun, 27 Apr 2025 20:49:43 -0700 (PDT)
+X-Forwarded-Encrypted: i=4; AJvYcCXm2yMD2DEv94GNiU3eG5cYMxBrKWkohawAgTyele7a+RlpQ5L0M/EUJMyQgI3qss55ryfKBylsbAKe@cmrit.ac.in
+X-Received: by 2002:a05:6512:1255:b0:549:4e80:5c83 with SMTP id 2adb3069b0e04-54e9000c344mr1938709e87.38.1745812183095;
+        Sun, 27 Apr 2025 20:49:43 -0700 (PDT)
+ARC-Seal: i=3; a=rsa-sha256; t=1745812183; cv=pass;
+        d=google.com; s=arc-20240605;
+        b=cIYBAcLvv6qiU5nbneNt3hMoY5zMD0BMW11hjYY4tDI14tuhuNCCG932wE9QHcTXhS
+         KtYZZ1m6fhRZGA0yv18gDyTTcxn/JkOyEcZr0QyzEC+8wd2Nv0Yl4LGo1478Xw0cqEDw
+         ha82iebBFbALGEb97yU/H3tY20WJ+tVQzkEvAhsJuPl79LGfswNNyox7nIUphe4dGV1q
+         02+G+hAv6p5U3in4wJ5kBaxhpgbz+Mrzv5zPDl3lJ/yrqWw1zF6Ap+FsBJeKmoBuikzN
+         8a/zsxnegTzNGrsDbuhDI1ZDLTWSZJkxnflHvuqvfvPOHzB8xLrjucgE5FCbeoU3hUCr
+         4ukQ==
+ARC-Message-Signature: i=3; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=list-unsubscribe:list-archive:list-help:list-post:list-id
+         :mailing-list:precedence:cc:to:subject:message-id:date:from
+         :mime-version:dkim-signature;
+        bh=9wdonolfQMuTFREEm1chDzJb3gomdeEa4+xHN59DQ2Q=;
+        fh=yeZT0juqvFtbVUUsz+X6mrrWCLvClqIaRhRqy42xVM4=;
+        b=in08f5aD8rmU13G1i3Dug+kGjxECCzyDPFVLvyzmifmVcFa69HZW4z9pvmNcnQkxE+
+         zITpIclaPtGX25gSv95oIv534ijuuhBCLBLgaHz9QcRgbyU/0JY603CTKnjNlT5f4adt
+         uszH8d+ejlnJv85GoX7QLO6ZCurS7UK/fd+YiL6lJSQMuN+jUo+hfj1nlvPSdNOQlP/r
+         jCpd1DcBKiK0t14v17e6sOq7CTe6ZP4ubIuYgPTRNxfSrbNjW2aftIcfUc+dTbZtoqBs
+         J5QadcAq0xHryD9cYB2PC2NyFbGzZ2rxwX8Nq5pLCdzFWPPRWsBSHuCUEpjTneHZf6re
+         bK3g==;
+        dara=google.com
+ARC-Authentication-Results: i=3; mx.google.com;
+       dkim=pass header.i=@cmrit-ac-in.20230601.gappssmtp.com header.s=20230601 header.b=jR+qImg0;
+       arc=pass (i=2 spf=pass spfdomain=cmrit.ac.in dkim=pass dkdomain=cmrit-ac-in.20230601.gappssmtp.com dmarc=pass fromdomain=cmrit.ac.in);
+       spf=pass (google.com: domain of ahostelstudentsgirls2024+bncbcwyvsmowyprbvpvxpaamgqep46vslq@cmrit.ac.in designates 209.85.220.69 as permitted sender) smtp.mailfrom=ahostelstudentsgirls2024+bncBCWYVSMOWYPRBVPVXPAAMGQEP46VSLQ@cmrit.ac.in;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=cmrit.ac.in;
+       dara=pass header.i=@cmrit.ac.in
+Return-Path: <ahostelstudentsgirls2024+bncBCWYVSMOWYPRBVPVXPAAMGQEP46VSLQ@cmrit.ac.in>
+Received: from mail-sor-f69.google.com (mail-sor-f69.google.com. [209.85.220.69])
+        by mx.google.com with SMTPS id 2adb3069b0e04-54e7c75437asor1422565e87.26.2025.04.27.20.49.42
+        for <shnk22aiml@cmrit.ac.in>
+        (Google Transport Security);
+        Sun, 27 Apr 2025 20:49:43 -0700 (PDT)
+Received-SPF: pass (google.com: domain of ahostelstudentsgirls2024+bncbcwyvsmowyprbvpvxpaamgqep46vslq@cmrit.ac.in designates 209.85.220.69 as permitted sender) client-ip=209.85.220.69;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@cmrit-ac-in.20230601.gappssmtp.com header.s=20230601 header.b=jR+qImg0;
+       arc=pass (i=2 spf=pass spfdomain=cmrit.ac.in dkim=pass dkdomain=cmrit-ac-in.20230601.gappssmtp.com dmarc=pass fromdomain=cmrit.ac.in);
+       spf=pass (google.com: domain of ahostelstudentsgirls2024+bncbcwyvsmowyprbvpvxpaamgqep46vslq@cmrit.ac.in designates 209.85.220.69 as permitted sender) smtp.mailfrom=ahostelstudentsgirls2024+bncBCWYVSMOWYPRBVPVXPAAMGQEP46VSLQ@cmrit.ac.in;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=cmrit.ac.in;
+       dara=pass header.i=@cmrit.ac.in
+ARC-Seal: i=2; a=rsa-sha256; t=1745812182; cv=pass;
+        d=google.com; s=arc-20240605;
+        b=PlvMJogVXWPg7LtP4/K+KYEdH51Oe0dsscuz9IcHO1UTo17l0xNFjUmCzGIUT857ki
+         FDkZNeTb686hPt0b5aH5jBkajsHS+5lNUhJ+hMKTcyafppJrGecJLZLy7eCXRqBzuVkP
+         koTraeYQDMjnGCht7Nd4VsmnFKQwELnlLeX32fwe2L8zq2jxbc7/Jb/6oeJNF+ji21Ou
+         +lHGL2ey9eFpZs0zhje9bjuqqafw+GT6+YK3eMx/lVh5WeLRs2XipbDFCBrzAVE09NC5
+         KxODllgRc+fUQy79VBltttewDD/hmGvWaathYq3MR2iaJggY6M+vB/7vL+1KmBW7hmR6
+         uQ/w==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=list-unsubscribe:list-archive:list-help:list-post:list-id
+         :mailing-list:precedence:cc:to:subject:message-id:date:from
+         :mime-version:dkim-signature;
+        bh=9wdonolfQMuTFREEm1chDzJb3gomdeEa4+xHN59DQ2Q=;
+        fh=yeZT0juqvFtbVUUsz+X6mrrWCLvClqIaRhRqy42xVM4=;
+        b=AkxRmby2KPeT3+thp69BHyBJ7+VVzR+jl4jiufliF2UVJHBEcin25s2n7dQR/wdGpk
+         g7NAy5Fj/XwjkwaI4jaToukgqEM9SB0dmwSuNHfT8nSlC0KW7M48EwwdCI67/s9WUCfy
+         63OMtxyNR8lMgaYsgTPM1mxzCc/Z+VDvnhrfqMv7s/hHnNCYKvgPy2CIVODWwtu+iUyB
+         Erpo/2FUNi9ZOfzdfs8rTt1Hi4MB3DAhFu8/xk49OvxlfCDt3xBjl5Ty+lJqyAYab7gP
+         Fl/6mZnRMjbaMMf04W0OzJkSbSS44JI/ugwE0FgFZfagVR5R5h9vh8MkiHqKOs/fyZ4v
+         FbmQ==;
+        darn=cmrit.ac.in
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@cmrit-ac-in.20230601.gappssmtp.com header.s=20230601 header.b=lRU8hI7W;
+       spf=pass (google.com: domain of hostel@cmrit.ac.in designates 209.85.220.41 as permitted sender) smtp.mailfrom=hostel@cmrit.ac.in;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=cmrit.ac.in;
+       dara=pass header.i=@cmrit.ac.in
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=cmrit-ac-in.20230601.gappssmtp.com; s=20230601; t=1745812182; x=1746416982; darn=cmrit.ac.in;
+        h=list-unsubscribe:list-archive:list-help:list-post:list-id
+         :mailing-list:precedence:x-original-authentication-results
+         :x-original-sender:cc:to:subject:message-id:date:from:mime-version
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=9wdonolfQMuTFREEm1chDzJb3gomdeEa4+xHN59DQ2Q=;
+        b=jR+qImg00Y3Dsn27gNU931sefK+yugG4T8a3XPv70nyPKNtPrPLLcFeBWfNaoHVrXB
+         dBtw8B/jjlQUynX2xCG6iD/FtIg+oev8WfbLif465ARONvKszoQKcllgJmcNO2lPR78d
+         Od8YIeKEIXoSlyFpVXrVsHSn0EB0sn+YYE8VoDVB3w1ZgfZaXlK4od62ddbklIFARGSj
+         odyUN4APEAETf2TOPUBGC/hzXAvTBJJp+x1oHJVKiTGGSbfPUdYbpKe1Oqt2Z70GTaQm
+         Hf5X8F3I5Aksu0bQPHHX0WTKLOllDwi6Ohl/IwaLhwgRF2B0FndQ8l/9T70KMTvGhlpR
+         BHbQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1745812182; x=1746416982;
+        h=list-unsubscribe:list-archive:list-help:list-post
+         :x-spam-checked-in-group:list-id:mailing-list:precedence
+         :x-original-authentication-results:x-original-sender:cc:to:subject
+         :message-id:date:from:mime-version:x-beenthere:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=9wdonolfQMuTFREEm1chDzJb3gomdeEa4+xHN59DQ2Q=;
+        b=hE3h095g7x5lxSUCMtqRYyzDmD2NkpYUTVu+zdzI0luvdb+0JXZmrUJAJ/hQPviGhR
+         JEwJjd9TJR3x48IysVCySqv/iXjDYp3AjY1jtpv7TID8V9KQLv1hRZup6qFgzZ9hKqwI
+         ziN0AEVhB31JRvOnYlr6n/Fu3MzG+XZEw0WVXB8L2fYgCCevqY4EN8LHg7zBJC9vdJ85
+         9psG1JhdyAM4odP+r0hZbeqiIpUqkBwsrhd9EvF+qrWTXbmz8nat+yUPQQAfeAVzrFBF
+         jm5OiFcURr7b1zy3JcCgJY7u+NIKRsDKw3C44sv71bRxT5vQRYGPQqxDIWquikdC+Rbj
+         Ygiw==
+X-Forwarded-Encrypted: i=2; AJvYcCXaoEw7rgpKWDtg1h47HXMbuYS8fgtBgsnvbls53Nf79+7VmnHYdWteGpyVNx+h54jAQoA/tMTTqmWb@cmrit.ac.in
+X-Gm-Message-State: AOJu0YwshdaBen5xItdUv/5PDeGPBj/jk2LjHzzI0IvrxQRBQkX2MjZI
+	rIk6Unwv2ayRRsaERtylDvhMdvaerYgW0UChP95SGpPfrwuxwWTo/8Vs/D5ij7WZyg==
+X-Google-Smtp-Source: AGHT+IFm1GZk//xb+5C7S2sRASpTOTXeA3KOWtlDbPSxug8Psg1D56t1QH6SGwgVEiJmeEKaJNWsCQ==
+X-Received: by 2002:a05:651c:12c3:b0:307:e0c3:5293 with SMTP id 38308e7fff4ca-319dd88d3d0mr24137561fa.36.1745812181839;
+        Sun, 27 Apr 2025 20:49:41 -0700 (PDT)
+X-BeenThere: ahostelstudentsgirls2024@cmrit.ac.in; h=AVT/gBENgcXPO+o2AUnTS0YOxotwmtVqnXAeHoMcbl2MspuBDA==
+Received: by 2002:a2e:a802:0:b0:30b:cd63:6fc1 with SMTP id 38308e7fff4ca-317815651d1ls255691fa.2.-pod-prod-04-eu;
+ Sun, 27 Apr 2025 20:49:39 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCXCRVv7RLeySNd9Lz9QMoO9GS0qPOxFIDQ6Jxi0uPmUgfZVdmfaTbc3WP6KSj826dR5ZLT6oQHrlpaphHe9uYLKUwiMYmUTMqA=@cmrit.ac.in
+X-Received: by 2002:a05:6512:3042:b0:545:381:71e with SMTP id 2adb3069b0e04-54e9000c6d5mr2084583e87.40.1745812178922;
+        Sun, 27 Apr 2025 20:49:38 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1745812178; cv=none;
+        d=google.com; s=arc-20240605;
+        b=SnVPcXwWQohigfcwcG0CccEsJoDWJJROgWiZ067WqxFtl9Ng6bkc6ha3paI3pZxHoX
+         lM45odHyfl2OtAuigw+5ZjestbEs5hap11Ak8RIAr+ypQ1HK9pP4+JsDM1t13wWPJgp2
+         fL+wx9sI5KgDKTbf06KSdC9TiMNn3I+GG25X7ZunzNmwbz9D4OrtFF8qQfae+vDyimXZ
+         7zBYbkVoWOpKpn1DhM1k29NuaDxKbBrwGbOQyGh5KwR47trqs2ZSXrdMR1kW4jMTnMum
+         2EJ/Izrca8NOd3znOoX2ppQMKyiubEtl0J9DuxfS4WBd+pGB/UT3cIFPJF1/5BIB4NtL
+         LFGw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=cc:to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=nGDXPoX9umg/X7RmPW+zAuddBS9GGtQPxuFk7vwIghQ=;
+        fh=zK2JtFsk7ypdksDrol5Mj9ckMuwQ2kPxOppTYIKFWqg=;
+        b=JrXI3Ur7Br/N2dcW96x0iyGlosJraciVX2D3w+2NQ2UxXa4Kz1u/P90ItneL8AUXSe
+         G4APfPOp46CbVF2Vv6X+sTSnAg8gPgV0Vvdwue+ekeOBTj0bCZ+TgK8R/bUc3SQjFFbd
+         4s6AbVyrem5u+nj8nIQ09bKQJ+M0uUyzG7Vj190iHaKoyJJZU9AIK8OmGiGOafbaWdFI
+         kRrc+NfNMgIk+LigIzrbBa9KWEnqij1FnzXZkyn2VXmMOoqrjVkqgyCdvWm87jq1tuhk
+         vC63ddt5cr2+sx7ifOyDgDFM38yveTKCtzJq/JHclLJVdDS/xMfm8dxNZqT+ugXuOJog
+         a1VA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@cmrit-ac-in.20230601.gappssmtp.com header.s=20230601 header.b=lRU8hI7W;
+       spf=pass (google.com: domain of hostel@cmrit.ac.in designates 209.85.220.41 as permitted sender) smtp.mailfrom=hostel@cmrit.ac.in;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=cmrit.ac.in;
+       dara=pass header.i=@cmrit.ac.in
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id 2adb3069b0e04-54e7c72a58fsor1751951e87.13.2025.04.27.20.49.38
+        for <ahostelstudentsgirls2024@cmrit.ac.in>
+        (Google Transport Security);
+        Sun, 27 Apr 2025 20:49:38 -0700 (PDT)
+Received-SPF: pass (google.com: domain of hostel@cmrit.ac.in designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+X-Forwarded-Encrypted: i=1; AJvYcCU8neqqtz/ObibdqH9wxgztWVa8F1KfuQHa27G4/9OQi6EOymgmR6VYIsEnZ6ClLPfIt71N9SvLOpWoKNmuTFMg/q9ZMQAdW9A=@cmrit.ac.in
+X-Gm-Gg: ASbGncuoRAZafp+NwOLzr/vERq1Pc2yV9EHceyDPDfhGtRR6xTZrcHe8oEB6REYFovq
+	7K/KhXayRGXWwB2RYiZVeMSa1EfoIyfQ547Gu2zcTX9+/t2+zDE/hYMdvnc70tdXxELUMUarLeI
+	iQ7MO6gkeHEkDlDBD0P097IcEM
+X-Received: by 2002:a05:6512:ba5:b0:549:8d07:ff13 with SMTP id
+ 2adb3069b0e04-54e900155d8mr2211888e87.51.1745812178227; Sun, 27 Apr 2025
+ 20:49:38 -0700 (PDT)
+MIME-Version: 1.0
+From: Kavitha Campus House <hostel@cmrit.ac.in>
+Date: Mon, 28 Apr 2025 09:19:28 +0530
+X-Gm-Features: ATxdqUHaBJq1UT-ndLMoy-iyk-2ietkTYstw7IQsts6nybhDOKMtXqxcVE37CKM
+Message-ID: <CAGBta7UnmK2kHfCBj5bf2XWi_bf3zX729_8_WeiBn=i5cs2_hw@mail.gmail.com>
+Subject: Introduction of SPACE BASIC APP
+To: ahostelstudentsboys2024@cmrit.ac.in, ahostelstudentsgirls2024@cmrit.ac.in
+Cc: Unit Manager <campushouse@cmrit.ac.in>, 
+	Vice Principal CMRIT <viceprincipal@cmrit.ac.in>
+Content-Type: multipart/alternative; boundary="000000000000ba71bb0633ce9227"
+X-Original-Sender: hostel@cmrit.ac.in
+X-Original-Authentication-Results: mx.google.com;       dkim=pass
+ header.i=@cmrit-ac-in.20230601.gappssmtp.com header.s=20230601
+ header.b=lRU8hI7W;       spf=pass (google.com: domain of hostel@cmrit.ac.in
+ designates 209.85.220.41 as permitted sender) smtp.mailfrom=hostel@cmrit.ac.in;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=cmrit.ac.in;
+       dara=pass header.i=@cmrit.ac.in
+Precedence: list
+Mailing-list: list ahostelstudentsgirls2024@cmrit.ac.in; contact ahostelstudentsgirls2024+owners@cmrit.ac.in
+List-ID: <ahostelstudentsgirls2024.cmrit.ac.in>
+X-Spam-Checked-In-Group: ahostelstudentsgirls2024@cmrit.ac.in
+X-Google-Group-Id: 416085797158
+List-Post: <https://groups.google.com/a/cmrit.ac.in/group/ahostelstudentsgirls2024/post>,
+ <mailto:ahostelstudentsgirls2024@cmrit.ac.in>
+List-Help: <https://support.google.com/a/cmrit.ac.in/bin/topic.py?topic=25838>,
+ <mailto:ahostelstudentsgirls2024+help@cmrit.ac.in>
+List-Archive: <https://groups.google.com/a/cmrit.ac.in/group/ahostelstudentsgirls2024/>
+List-Unsubscribe: <mailto:googlegroups-manage+416085797158+unsubscribe@googlegroups.com>,
+ <https://groups.google.com/a/cmrit.ac.in/group/ahostelstudentsgirls2024/subscribe>
+
+--000000000000ba71bb0633ce9227
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Dear Students,
+
+To enhance the overall hostel experience and streamline administrative
+processes, we are pleased to introduce *Space Basic* =E2=80=93 a comprehens=
+ive Hostel
+Management Application designed to improve student life in hostels through
+timely, efficient service and communication.
+
+The Space Basic app empowers both students and staff by simplifying
+everyday hostel-related tasks and ensuring effective resolution of issues.
+With a user-friendly interface and real-time updates, this platform brings
+together key hostel services under one digital roof.
+Key Features of the Space Basic App:
+
+   1.
+
+   Leave Application: Apply for leave and track approval status with ease.
+   2.
+
+   Ticket Raising System:
+
+Students can effortlessly raise maintenance requests, while hostel staff
+can efficiently track, assign, and resolve complaints.
+
+   1.
+
+   Housekeeping Complaints : Students can raise complaints related to
+   Housekeeping
+   2.
+
+   Laundry Complaints: Students can raise and Track Laundry complaints
+   3.
+
+   Internet Issues: Report and resolve internet-related problems
+   conveniently.
+   4.
+
+   Repair and Maintenance: Raise requests for plumbing, electrical, and
+   furniture-related repairs.
+   5.
+
+   Food Complaints : Students can Raise complaints regarding food shortage,
+   quality, taste, etc
+
+
+   3.
+
+    Announcements & Circulars:
+
+Receive timely updates, notices, and circulars from the hostel
+administration.
+
+   4.
+
+   Attendance Tracking:
+
+Monitor daily attendance records with transparency.
+Accessing the Space Basic App:
+
+   -
+
+   Android : Download Here
+   <https://play.google.com/store/apps/details?id=3Dcom.app.spacebasic&hl=
+=3Den_IN&gl=3DUS>
+   -
+
+   iOS : Download Here
+   <https://apps.apple.com/in/app/spacebasic/id1217386342>
+   -
+
+   Web Login: Login Here <https://portal.spacebasic.com/login>
+
+Getting Started:
+
+To help you get started, we=E2=80=99ve prepared tutorial videos for both st=
+udents
+and staff covering how to log in and use the app effectively. Please refer
+to these resources to make the most of Space Basic.
+
+1. Adding Tickets
+<https://drive.google.com/file/d/19u02T8rGrEKfM1B-061se3YiKH0X52Wo/view?usp=
+=3Ddrive_link>
+
+2. Adding Leave
+<https://drive.google.com/file/d/1DoMSVkpaNcdAThamPEcPhiuDZpLUA5yE/view?usp=
+=3Ddrive_link>
+
+3. Logging into SpaceBasic
+<https://drive.google.com/file/d/1oELqYVcVhvHjc_LLIu97nCHTrd46Dnk5/view?usp=
+=3Ddrive_linkhttps://drive.google.com/file/d/1oELqYVcVhvHjc_LLIu97nCHTrd46D=
+nk5/view?usp=3Ddrive_link>
+
+By embracing this digital solution, we aim to create a more responsive,
+connected, and convenient hostel environment for everyone. We encourage all
+Students  to actively use the Space Basic platform for a smoother and more
+efficient hostel experience
+
+
+Office of Campus House
+
+
+--000000000000ba71bb0633ce9227
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><br><div><br></div><div>Dear Students,</div><div><span id=
+=3D"gmail-docs-internal-guid-84a80e92-7fff-9226-86b5-719d4b79698f"><p dir=
+=3D"ltr" style=3D"line-height:1.38;text-align:justify"><span style=3D"font-=
+size:10pt;font-family:Arial,sans-serif;color:rgb(0,0,0);background-color:tr=
+ansparent;font-variant-numeric:normal;font-variant-east-asian:normal;font-v=
+ariant-alternates:normal;vertical-align:baseline">To enhance the overall ho=
+stel experience and streamline administrative processes, we are pleased to =
+introduce </span><span style=3D"font-size:10pt;font-family:Arial,sans-serif=
+;color:rgb(0,0,0);background-color:transparent;font-weight:700;font-variant=
+-numeric:normal;font-variant-east-asian:normal;font-variant-alternates:norm=
+al;vertical-align:baseline"><u>Space Basic</u></span><span style=3D"font-si=
+ze:10pt;font-family:Arial,sans-serif;color:rgb(0,0,0);background-color:tran=
+sparent;font-variant-numeric:normal;font-variant-east-asian:normal;font-var=
+iant-alternates:normal;vertical-align:baseline"> =E2=80=93 a comprehensive =
+</span><span style=3D"font-size:10pt;font-family:Arial,sans-serif;color:rgb=
+(0,0,0);background-color:transparent;font-weight:700;font-variant-numeric:n=
+ormal;font-variant-east-asian:normal;font-variant-alternates:normal;vertica=
+l-align:baseline">Hostel Management Application</span><span style=3D"font-s=
+ize:10pt;font-family:Arial,sans-serif;color:rgb(0,0,0);background-color:tra=
+nsparent;font-variant-numeric:normal;font-variant-east-asian:normal;font-va=
+riant-alternates:normal;vertical-align:baseline"> designed to improve stude=
+nt life in hostels through timely, efficient service and communication.</sp=
+an></p><p dir=3D"ltr" style=3D"line-height:1.38;text-align:justify"><span s=
+tyle=3D"font-size:10pt;font-family:Arial,sans-serif;color:rgb(0,0,0);backgr=
+ound-color:transparent;font-variant-numeric:normal;font-variant-east-asian:=
+normal;font-variant-alternates:normal;vertical-align:baseline">The Space Ba=
+sic app empowers both students and staff by simplifying everyday hostel-rel=
+ated tasks and ensuring effective resolution of issues. With a user-friendl=
+y interface and real-time updates, this platform brings together key hostel=
+ services under one digital roof.</span></p><h3 dir=3D"ltr" style=3D"line-h=
+eight:1.38;text-align:justify;margin-top:14pt;margin-bottom:4pt"><span styl=
+e=3D"font-size:12pt;font-family:Arial,sans-serif;color:rgb(0,0,0);backgroun=
+d-color:transparent;font-variant-numeric:normal;font-variant-east-asian:nor=
+mal;font-variant-alternates:normal;vertical-align:baseline">Key Features of=
+ the Space Basic App:</span></h3><ol style=3D"margin-top:0px;margin-bottom:=
+0px"><li dir=3D"ltr" style=3D"list-style-type:decimal;font-size:10pt;font-f=
+amily:Arial,sans-serif;color:rgb(0,0,0);background-color:transparent;font-v=
+ariant-numeric:normal;font-variant-east-asian:normal;font-variant-alternate=
+s:normal;vertical-align:baseline;white-space:pre"><p dir=3D"ltr" style=3D"l=
+ine-height:1.38;text-align:justify;margin-top:0pt;margin-bottom:12pt" role=
+=3D"presentation"><span style=3D"font-size:10pt;background-color:transparen=
+t;font-weight:700;font-variant-numeric:normal;font-variant-east-asian:norma=
+l;font-variant-alternates:normal;text-decoration-line:underline;vertical-al=
+ign:baseline">Leave Application</span><span style=3D"font-size:10pt;backgro=
+und-color:transparent;font-weight:700;font-variant-numeric:normal;font-vari=
+ant-east-asian:normal;font-variant-alternates:normal;vertical-align:baselin=
+e">:</span><span style=3D"font-size:10pt;background-color:transparent;font-=
+variant-numeric:normal;font-variant-east-asian:normal;font-variant-alternat=
+es:normal;vertical-align:baseline"> Apply for leave and track approval stat=
+us with ease.</span></p></li><li dir=3D"ltr" style=3D"list-style-type:decim=
+al;font-size:10pt;font-family:Arial,sans-serif;color:rgb(0,0,0);background-=
+color:transparent;font-variant-numeric:normal;font-variant-east-asian:norma=
+l;font-variant-alternates:normal;vertical-align:baseline;white-space:pre"><=
+p dir=3D"ltr" style=3D"line-height:1.38;text-align:justify;margin-top:0pt;m=
+argin-bottom:0pt" role=3D"presentation"><span style=3D"font-size:10pt;backg=
+round-color:transparent;font-weight:700;font-variant-numeric:normal;font-va=
+riant-east-asian:normal;font-variant-alternates:normal;text-decoration-line=
+:underline;vertical-align:baseline">Ticket Raising System:</span><span styl=
+e=3D"font-size:10pt;background-color:transparent;font-variant-numeric:norma=
+l;font-variant-east-asian:normal;font-variant-alternates:normal;vertical-al=
+ign:baseline">=C2=A0</span></p></li></ol><p dir=3D"ltr" style=3D"line-heigh=
+t:1.38;text-align:justify;margin-top:0pt;margin-bottom:0pt"><span style=3D"=
+font-size:10pt;font-family:Arial,sans-serif;color:rgb(0,0,0);background-col=
+or:transparent;font-variant-numeric:normal;font-variant-east-asian:normal;f=
+ont-variant-alternates:normal;vertical-align:baseline">Students can effortl=
+essly raise maintenance requests, while hostel staff can efficiently track,=
+ assign, and resolve complaints.</span></p><ol style=3D"margin-top:0px;marg=
+in-bottom:0px"><li dir=3D"ltr" style=3D"list-style-type:lower-alpha;font-si=
+ze:10pt;font-family:Arial,sans-serif;color:rgb(0,0,0);background-color:tran=
+sparent;font-variant-numeric:normal;font-variant-east-asian:normal;font-var=
+iant-alternates:normal;vertical-align:baseline;white-space:pre"><p dir=3D"l=
+tr" style=3D"line-height:1.38;text-align:justify;margin-top:12pt;margin-bot=
+tom:0pt" role=3D"presentation"><span style=3D"font-size:10pt;background-col=
+or:transparent;font-weight:700;font-variant-numeric:normal;font-variant-eas=
+t-asian:normal;font-variant-alternates:normal;text-decoration-line:underlin=
+e;vertical-align:baseline">Housekeeping Complaints :</span><span style=3D"f=
+ont-size:10pt;background-color:transparent;font-weight:700;font-variant-num=
+eric:normal;font-variant-east-asian:normal;font-variant-alternates:normal;v=
+ertical-align:baseline"> </span><span style=3D"font-size:10pt;background-co=
+lor:transparent;font-variant-numeric:normal;font-variant-east-asian:normal;=
+font-variant-alternates:normal;vertical-align:baseline">Students can raise =
+complaints related to Housekeeping</span></p></li><li dir=3D"ltr" style=3D"=
+list-style-type:lower-alpha;font-size:10pt;font-family:Arial,sans-serif;col=
+or:rgb(0,0,0);background-color:transparent;font-variant-numeric:normal;font=
+-variant-east-asian:normal;font-variant-alternates:normal;vertical-align:ba=
+seline;white-space:pre"><p dir=3D"ltr" style=3D"line-height:1.38;text-align=
+:justify;margin-top:0pt;margin-bottom:0pt" role=3D"presentation"><span styl=
+e=3D"font-size:10pt;background-color:transparent;font-weight:700;font-varia=
+nt-numeric:normal;font-variant-east-asian:normal;font-variant-alternates:no=
+rmal;text-decoration-line:underline;vertical-align:baseline">Laundry Compla=
+ints:</span><span style=3D"font-size:10pt;background-color:transparent;font=
+-variant-numeric:normal;font-variant-east-asian:normal;font-variant-alterna=
+tes:normal;text-decoration-line:underline;vertical-align:baseline"> </span>=
+<span style=3D"font-size:10pt;background-color:transparent;font-variant-num=
+eric:normal;font-variant-east-asian:normal;font-variant-alternates:normal;v=
+ertical-align:baseline">Students can raise and Track Laundry complaints</sp=
+an></p></li><li dir=3D"ltr" style=3D"list-style-type:lower-alpha;font-size:=
+10pt;font-family:Arial,sans-serif;color:rgb(0,0,0);background-color:transpa=
+rent;font-variant-numeric:normal;font-variant-east-asian:normal;font-varian=
+t-alternates:normal;vertical-align:baseline;white-space:pre"><p dir=3D"ltr"=
+ style=3D"line-height:1.38;text-align:justify;margin-top:0pt;margin-bottom:=
+0pt" role=3D"presentation"><span style=3D"font-size:10pt;background-color:t=
+ransparent;font-weight:700;font-variant-numeric:normal;font-variant-east-as=
+ian:normal;font-variant-alternates:normal;text-decoration-line:underline;ve=
+rtical-align:baseline">Internet Issues:</span><span style=3D"font-size:10pt=
+;background-color:transparent;font-variant-numeric:normal;font-variant-east=
+-asian:normal;font-variant-alternates:normal;vertical-align:baseline"> Repo=
+rt and resolve internet-related problems conveniently.</span></p></li><li d=
+ir=3D"ltr" style=3D"list-style-type:lower-alpha;font-size:10pt;font-family:=
+Arial,sans-serif;color:rgb(0,0,0);background-color:transparent;font-variant=
+-numeric:normal;font-variant-east-asian:normal;font-variant-alternates:norm=
+al;vertical-align:baseline;white-space:pre"><p dir=3D"ltr" style=3D"line-he=
+ight:1.38;text-align:justify;margin-top:0pt;margin-bottom:0pt" role=3D"pres=
+entation"><span style=3D"font-size:10pt;background-color:transparent;font-w=
+eight:700;font-variant-numeric:normal;font-variant-east-asian:normal;font-v=
+ariant-alternates:normal;text-decoration-line:underline;vertical-align:base=
+line">Repair and Maintenance:</span><span style=3D"font-size:10pt;backgroun=
+d-color:transparent;font-variant-numeric:normal;font-variant-east-asian:nor=
+mal;font-variant-alternates:normal;vertical-align:baseline"> Raise requests=
+ for plumbing, electrical, and furniture-related repairs.</span></p></li><l=
+i dir=3D"ltr" style=3D"list-style-type:lower-alpha;font-size:10pt;font-fami=
+ly:Arial,sans-serif;color:rgb(0,0,0);background-color:transparent;font-vari=
+ant-numeric:normal;font-variant-east-asian:normal;font-variant-alternates:n=
+ormal;vertical-align:baseline;white-space:pre"><p dir=3D"ltr" style=3D"line=
+-height:1.8;text-align:justify;margin-top:0pt;margin-bottom:0pt" role=3D"pr=
+esentation"><span style=3D"font-size:10pt;background-color:transparent;font=
+-weight:700;font-variant-numeric:normal;font-variant-east-asian:normal;font=
+-variant-alternates:normal;text-decoration-line:underline;vertical-align:ba=
+seline">Food Complaints :</span><span style=3D"font-size:10pt;background-co=
+lor:transparent;font-weight:700;font-variant-numeric:normal;font-variant-ea=
+st-asian:normal;font-variant-alternates:normal;vertical-align:baseline"> </=
+span><span style=3D"font-size:10pt;background-color:transparent;font-varian=
+t-numeric:normal;font-variant-east-asian:normal;font-variant-alternates:nor=
+mal;vertical-align:baseline">Students can Raise complaints regarding food s=
+hortage, quality, taste, etc</span></p></li></ol><ol style=3D"margin-top:0p=
+x;margin-bottom:0px" start=3D"3"><li dir=3D"ltr" style=3D"list-style-type:d=
+ecimal;font-size:10pt;font-family:Arial,sans-serif;color:rgb(0,0,0);backgro=
+und-color:transparent;font-variant-numeric:normal;font-variant-east-asian:n=
+ormal;font-variant-alternates:normal;vertical-align:baseline;white-space:pr=
+e"><p dir=3D"ltr" style=3D"line-height:1.8;text-align:justify;margin-top:0p=
+t;margin-bottom:0pt" role=3D"presentation"><span style=3D"font-size:10pt;ba=
+ckground-color:transparent;font-variant-numeric:normal;font-variant-east-as=
+ian:normal;font-variant-alternates:normal;text-decoration-line:underline;ve=
+rtical-align:baseline">=C2=A0</span><span style=3D"font-size:10pt;backgroun=
+d-color:transparent;font-weight:700;font-variant-numeric:normal;font-varian=
+t-east-asian:normal;font-variant-alternates:normal;text-decoration-line:und=
+erline;vertical-align:baseline">Announcements &amp; Circulars:</span><span =
+style=3D"font-size:10pt;background-color:transparent;font-variant-numeric:n=
+ormal;font-variant-east-asian:normal;font-variant-alternates:normal;vertica=
+l-align:baseline">=C2=A0</span></p></li></ol><p dir=3D"ltr" style=3D"line-h=
+eight:1.8;text-align:justify;margin-top:0pt;margin-bottom:0pt"><span style=
+=3D"font-size:10pt;font-family:Arial,sans-serif;color:rgb(0,0,0);background=
+-color:transparent;font-variant-numeric:normal;font-variant-east-asian:norm=
+al;font-variant-alternates:normal;vertical-align:baseline">Receive timely u=
+pdates, notices, and circulars from the hostel administration.</span></p><o=
+l style=3D"margin-top:0px;margin-bottom:0px" start=3D"4"><li dir=3D"ltr" st=
+yle=3D"list-style-type:decimal;font-size:10pt;font-family:Arial,sans-serif;=
+color:rgb(0,0,0);background-color:transparent;font-variant-numeric:normal;f=
+ont-variant-east-asian:normal;font-variant-alternates:normal;vertical-align=
+:baseline;white-space:pre"><p dir=3D"ltr" style=3D"line-height:1.38;text-al=
+ign:justify;margin-top:0pt;margin-bottom:0pt" role=3D"presentation"><span s=
+tyle=3D"font-size:10pt;background-color:transparent;font-weight:700;font-va=
+riant-numeric:normal;font-variant-east-asian:normal;font-variant-alternates=
+:normal;text-decoration-line:underline;vertical-align:baseline">Attendance =
+Tracking:</span><span style=3D"font-size:10pt;background-color:transparent;=
+font-variant-numeric:normal;font-variant-east-asian:normal;font-variant-alt=
+ernates:normal;vertical-align:baseline">=C2=A0</span></p></li></ol><p dir=
+=3D"ltr" style=3D"line-height:1.38;text-indent:36pt;text-align:justify;marg=
+in-top:0pt;margin-bottom:0pt"><span style=3D"font-size:10pt;font-family:Ari=
+al,sans-serif;color:rgb(0,0,0);background-color:transparent;font-variant-nu=
+meric:normal;font-variant-east-asian:normal;font-variant-alternates:normal;=
+vertical-align:baseline">Monitor daily attendance records with transparency=
+.</span></p><h3 dir=3D"ltr" style=3D"line-height:1.38;text-align:justify;ma=
+rgin-top:14pt;margin-bottom:4pt"><span style=3D"font-size:12pt;font-family:=
+Arial,sans-serif;color:rgb(0,0,0);background-color:transparent;font-variant=
+-numeric:normal;font-variant-east-asian:normal;font-variant-alternates:norm=
+al;vertical-align:baseline">Accessing the Space Basic App:</span></h3><ul s=
+tyle=3D"margin-top:0px;margin-bottom:0px"><li dir=3D"ltr" style=3D"list-sty=
+le-type:disc;font-size:10pt;font-family:Arial,sans-serif;color:rgb(0,0,0);b=
+ackground-color:transparent;font-variant-numeric:normal;font-variant-east-a=
+sian:normal;font-variant-alternates:normal;vertical-align:baseline;white-sp=
+ace:pre"><p dir=3D"ltr" style=3D"line-height:1.38;text-align:justify;margin=
+-top:12pt;margin-bottom:0pt" role=3D"presentation"><span style=3D"font-size=
+:10pt;background-color:transparent;font-weight:700;font-variant-numeric:nor=
+mal;font-variant-east-asian:normal;font-variant-alternates:normal;vertical-=
+align:baseline">Android</span><span style=3D"font-size:10pt;background-colo=
+r:transparent;font-weight:700;font-variant-numeric:normal;font-variant-east=
+-asian:normal;font-variant-alternates:normal;vertical-align:baseline"><span=
+ class=3D"gmail-Apple-tab-span" style=3D"text-wrap-mode: nowrap;">	</span><=
+/span><span style=3D"font-size:10pt;background-color:transparent;font-weigh=
+t:700;font-variant-numeric:normal;font-variant-east-asian:normal;font-varia=
+nt-alternates:normal;vertical-align:baseline">:</span><a href=3D"https://pl=
+ay.google.com/store/apps/details?id=3Dcom.app.spacebasic&amp;hl=3Den_IN&amp=
+;gl=3DUS" style=3D"text-decoration-line:none"><span style=3D"font-size:10pt=
+;color:rgb(0,0,0);background-color:transparent;font-variant-numeric:normal;=
+font-variant-east-asian:normal;font-variant-alternates:normal;vertical-alig=
+n:baseline"> </span><span style=3D"font-size:10pt;background-color:transpar=
+ent;font-variant-numeric:normal;font-variant-east-asian:normal;font-variant=
+-alternates:normal;text-decoration-line:underline;vertical-align:baseline">=
+Download Here</span></a></p></li><li dir=3D"ltr" style=3D"list-style-type:d=
+isc;font-size:10pt;font-family:Arial,sans-serif;color:rgb(0,0,0);background=
+-color:transparent;font-variant-numeric:normal;font-variant-east-asian:norm=
+al;font-variant-alternates:normal;vertical-align:baseline;white-space:pre">=
+<p dir=3D"ltr" style=3D"line-height:1.38;text-align:justify;margin-top:0pt;=
+margin-bottom:0pt" role=3D"presentation"><span style=3D"font-size:10pt;back=
+ground-color:transparent;font-weight:700;font-variant-numeric:normal;font-v=
+ariant-east-asian:normal;font-variant-alternates:normal;vertical-align:base=
+line">iOS</span><span style=3D"font-size:10pt;background-color:transparent;=
+font-weight:700;font-variant-numeric:normal;font-variant-east-asian:normal;=
+font-variant-alternates:normal;vertical-align:baseline"><span class=3D"gmai=
+l-Apple-tab-span" style=3D"text-wrap-mode: nowrap;">	</span></span><span st=
+yle=3D"font-size:10pt;background-color:transparent;font-weight:700;font-var=
+iant-numeric:normal;font-variant-east-asian:normal;font-variant-alternates:=
+normal;vertical-align:baseline">:</span><a href=3D"https://apps.apple.com/i=
+n/app/spacebasic/id1217386342" style=3D"text-decoration-line:none"><span st=
+yle=3D"font-size:10pt;color:rgb(0,0,0);background-color:transparent;font-va=
+riant-numeric:normal;font-variant-east-asian:normal;font-variant-alternates=
+:normal;vertical-align:baseline"> </span><span style=3D"font-size:10pt;back=
+ground-color:transparent;font-variant-numeric:normal;font-variant-east-asia=
+n:normal;font-variant-alternates:normal;text-decoration-line:underline;vert=
+ical-align:baseline">Download Here</span></a></p></li><li dir=3D"ltr" style=
+=3D"list-style-type:disc;font-size:10pt;font-family:Arial,sans-serif;color:=
+rgb(0,0,0);background-color:transparent;font-variant-numeric:normal;font-va=
+riant-east-asian:normal;font-variant-alternates:normal;vertical-align:basel=
+ine;white-space:pre"><p dir=3D"ltr" style=3D"line-height:1.38;text-align:ju=
+stify;margin-top:0pt;margin-bottom:12pt" role=3D"presentation"><span style=
+=3D"font-size:10pt;background-color:transparent;font-weight:700;font-varian=
+t-numeric:normal;font-variant-east-asian:normal;font-variant-alternates:nor=
+mal;vertical-align:baseline">Web Login:</span><a href=3D"https://portal.spa=
+cebasic.com/login" style=3D"text-decoration-line:none"><span style=3D"font-=
+size:10pt;color:rgb(0,0,0);background-color:transparent;font-variant-numeri=
+c:normal;font-variant-east-asian:normal;font-variant-alternates:normal;vert=
+ical-align:baseline"> </span><span style=3D"font-size:10pt;background-color=
+:transparent;font-variant-numeric:normal;font-variant-east-asian:normal;fon=
+t-variant-alternates:normal;text-decoration-line:underline;vertical-align:b=
+aseline">Login Here</span></a></p></li></ul><h3 dir=3D"ltr" style=3D"line-h=
+eight:1.38;text-align:justify;margin-top:14pt;margin-bottom:4pt"><span styl=
+e=3D"font-size:12pt;font-family:Arial,sans-serif;color:rgb(0,0,0);backgroun=
+d-color:transparent;font-variant-numeric:normal;font-variant-east-asian:nor=
+mal;font-variant-alternates:normal;vertical-align:baseline">Getting Started=
+:</span></h3><p dir=3D"ltr" style=3D"line-height:1.38;text-align:justify;ma=
+rgin-top:12pt;margin-bottom:12pt"><span style=3D"font-size:10pt;font-family=
+:Arial,sans-serif;color:rgb(0,0,0);background-color:transparent;font-varian=
+t-numeric:normal;font-variant-east-asian:normal;font-variant-alternates:nor=
+mal;vertical-align:baseline">To help you get started, we=E2=80=99ve prepare=
+d tutorial videos for both students and staff covering how to log in and us=
+e the app effectively. Please refer to these resources to make the most of =
+Space Basic.</span></p><p dir=3D"ltr" style=3D"line-height:1.38;margin-left=
+:36pt;text-align:justify;margin-top:0pt;margin-bottom:0pt"><span style=3D"f=
+ont-size:10pt;font-family:Arial,sans-serif;color:rgb(80,0,80);font-variant-=
+numeric:normal;font-variant-east-asian:normal;font-variant-alternates:norma=
+l;vertical-align:baseline">1. </span><a href=3D"https://drive.google.com/fi=
+le/d/19u02T8rGrEKfM1B-061se3YiKH0X52Wo/view?usp=3Ddrive_link" style=3D"text=
+-decoration-line:none"><span style=3D"font-size:10pt;font-family:Arial,sans=
+-serif;font-variant-numeric:normal;font-variant-east-asian:normal;font-vari=
+ant-alternates:normal;text-decoration-line:underline;vertical-align:baselin=
+e">Adding Tickets</span></a></p><p dir=3D"ltr" style=3D"line-height:1.38;ma=
+rgin-left:36pt;text-align:justify;margin-top:0pt;margin-bottom:0pt"><span s=
+tyle=3D"font-size:10pt;font-family:Arial,sans-serif;color:rgb(80,0,80);font=
+-variant-numeric:normal;font-variant-east-asian:normal;font-variant-alterna=
+tes:normal;vertical-align:baseline">2. </span><a href=3D"https://drive.goog=
+le.com/file/d/1DoMSVkpaNcdAThamPEcPhiuDZpLUA5yE/view?usp=3Ddrive_link" styl=
+e=3D"text-decoration-line:none"><span style=3D"font-size:10pt;font-family:A=
+rial,sans-serif;font-variant-numeric:normal;font-variant-east-asian:normal;=
+font-variant-alternates:normal;text-decoration-line:underline;vertical-alig=
+n:baseline">Adding Leave</span></a></p><p dir=3D"ltr" style=3D"line-height:=
+1.38;margin-left:36pt;text-align:justify;margin-top:0pt;margin-bottom:0pt">=
+<span style=3D"font-size:10pt;font-family:Arial,sans-serif;color:rgb(80,0,8=
+0);font-variant-numeric:normal;font-variant-east-asian:normal;font-variant-=
+alternates:normal;vertical-align:baseline">3. </span><a href=3D"https://dri=
+ve.google.com/file/d/1oELqYVcVhvHjc_LLIu97nCHTrd46Dnk5/view?usp=3Ddrive_lin=
+khttps://drive.google.com/file/d/1oELqYVcVhvHjc_LLIu97nCHTrd46Dnk5/view?usp=
+=3Ddrive_link" style=3D"text-decoration-line:none"><span style=3D"font-size=
+:10pt;font-family:Arial,sans-serif;font-variant-numeric:normal;font-variant=
+-east-asian:normal;font-variant-alternates:normal;text-decoration-line:unde=
+rline;vertical-align:baseline">Logging into SpaceBasic</span></a></p><br><p=
+ dir=3D"ltr" style=3D"line-height:1.38;text-align:justify;margin-top:0pt;ma=
+rgin-bottom:0pt"><span style=3D"font-size:10pt;font-family:Arial,sans-serif=
+;color:rgb(0,0,0);background-color:transparent;font-variant-numeric:normal;=
+font-variant-east-asian:normal;font-variant-alternates:normal;vertical-alig=
+n:baseline">By embracing this digital solution, we aim to create a more res=
+ponsive, connected, and convenient hostel environment for everyone. We enco=
+urage all Students=C2=A0 to actively use the Space Basic platform for a smo=
+other and more efficient hostel experience</span></p></span><br class=3D"gm=
+ail-Apple-interchange-newline"></div><div><br></div><div>Office of Campus H=
+ouse</div></div>
+
+
+--000000000000ba71bb0633ce9227--

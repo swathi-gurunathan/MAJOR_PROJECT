@@ -1,0 +1,209 @@
+Delivered-To: shnk22aiml@cmrit.ac.in
+Received: by 2002:a05:7108:3b0f:b0:402:288b:55c7 with SMTP id ba15csp2998538gdb;
+        Wed, 23 Apr 2025 01:49:47 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGCdiuvN47cxtMP0rlioccocNrSjkF6x3RyLu3c4CaRrmnY1cjKrRjJgu0lwbjg4NDQ6xC5
+X-Received: by 2002:a05:6602:4a0a:b0:861:cb60:1e93 with SMTP id ca18e2360f4ac-861dbe19dd1mr2187507039f.6.1745398186931;
+        Wed, 23 Apr 2025 01:49:46 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1745398186; cv=pass;
+        d=google.com; s=arc-20240605;
+        b=cZk1SAdIg0MROy0qqGkGZ/zksJ/UnRgIWjiBBIUuT+pvNqwdKv9T5DQIzYBLnAWjXz
+         rh/DvWyHT4kfCn5WOodIxY7bF1vpii7WEfwAbEg1sR4MRTgt/CSYHeGPh1KfS6r0w866
+         bbUsFqpZIBXksmTWe1daOcpMQ8B3TP9D/PjDgblcfYPsFUa24pbNp7/sBQdTrl2Q7OrW
+         UxemNhhrywREU7VVB48khEANuE4nDc55fw1vGgD1XmB2j6GI8YzD1unUDt09nS22ABF+
+         A+ef/9lDVqGV445OdIg8fIYf9MKrJU3yJOdP3V31ISc3IP9AlbgAfqhoErUNumJW/xRR
+         9EKA==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=mime-version:message-id:date:to:from:subject:dkim-signature;
+        bh=QrW9gUBaBxG08jU/fFyMEai71+sgf0yrAfuep0YEaCU=;
+        fh=uyfHO3OdEAugJ11Ui8IOTw0xuGkbRWMlRFyA8R8VVLo=;
+        b=RrG0e0+AZSZRBQC3XQHkp4dtsB1XvzaNK8ay9Q5CgOHX47MNbG8pEY4RnRLySoye3v
+         gFRwMrL3JjZ5gCJI+yeDA8FbBTRpJ45y6L63kkbcqtK5kowO2nMLtvsl1ejPbWJ6rN+b
+         Mo90SKjOwP7rtr9gh7mFA5QgJrUZRNP0W/6hQPzwXPIbchZ3o3OjRWtUWA3oI7pylstB
+         Bq3cCpTXQXcf5DBzrNg4iXVjFYBbImBfJlm84d9u4DEyPSEiPjpNw5WlEvUkinec+Bw9
+         wPG28zP7T8k+//sKX9sHbwGyAwLFRbwAI99OCl7vJ7IR2fWowhtLqFwNxAxhAFT9H0qg
+         8nUQ==;
+        dara=google.com
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@mail.rakuten.com header.s=selector2 header.b=FoV9lQey;
+       arc=pass (i=1 spf=pass spfdomain=mail.rakuten.com dkim=pass dkdomain=mail.rakuten.com dmarc=pass fromdomain=mail.rakuten.com);
+       spf=pass (google.com: domain of rakuten-product-conference@mail.rakuten.com designates 2a01:111:f403:c405::2 as permitted sender) smtp.mailfrom=rakuten-product-conference@mail.rakuten.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=mail.rakuten.com
+Return-Path: <rakuten-product-conference@mail.rakuten.com>
+Received: from TYVP286CU001.outbound.protection.outlook.com (mail-japaneastazlp170110002.outbound.protection.outlook.com. [2a01:111:f403:c405::2])
+        by mx.google.com with ESMTPS id ca18e2360f4ac-864447e2b09si91977339f.95.2025.04.23.01.49.46
+        for <shnk22aiml@cmrit.ac.in>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 23 Apr 2025 01:49:46 -0700 (PDT)
+Received-SPF: pass (google.com: domain of rakuten-product-conference@mail.rakuten.com designates 2a01:111:f403:c405::2 as permitted sender) client-ip=2a01:111:f403:c405::2;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mail.rakuten.com header.s=selector2 header.b=FoV9lQey;
+       arc=pass (i=1 spf=pass spfdomain=mail.rakuten.com dkim=pass dkdomain=mail.rakuten.com dmarc=pass fromdomain=mail.rakuten.com);
+       spf=pass (google.com: domain of rakuten-product-conference@mail.rakuten.com designates 2a01:111:f403:c405::2 as permitted sender) smtp.mailfrom=rakuten-product-conference@mail.rakuten.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=mail.rakuten.com
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=lInyYdTYhnXyS9L9WPUptENNpLsXMhENwxbgSomR9//sb6Y1wNAgUcOk9Vn2jcYNCTY4OD3BqxqZkkxmNqTUpT6Fbz0h1vwEUZfkKs0R4KGVLwyEVX0jy19o9e4FqiY5ko0DRGrQLFOWGakFr/ah/RPjJ5u8t1A4JI2ZpI1NlA5wcgHcQE718pPJrKKMPHeN/UNXDJAxx1dpfotqloFIwhs1mQ33OlntZbFsVhe1OD3I4UxlssM6T7j7ZE03gNvxzOWy96YLhLibwV3b9pesSFFYhhVZFFxAWwsxBqBuZFuYcNHIXj1a4ufCrZQRiMCPgAXC/JK2MDM9QO62ITZbdw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=QrW9gUBaBxG08jU/fFyMEai71+sgf0yrAfuep0YEaCU=;
+ b=HO6+7i4x8lpLB9OIy5Yp/KnuNckFC7frp/KJpZzQ1qCsd5ui/SCYvNI5F+oCJL8oer6hYo47fHxJVv/lZ60CmEXezvI8FtqG+W08FkdoXDBhwlTbxpCMwS1AvGGG1U0OVtmBUXlLZ6lDwS+Y8RprHcN19UNixLgPDXio/QZ/ev7CNd/0OH7YV1kxo+D/v6s38Hy7PVdJt+Z34eGqqWI0Nshb5n4S0QVKZsqICN+XarRfMLs98+Di2iI0mbqpq57URiXj/k9oT5z2l+k9NvXlU+urA3un51TceSZDLYfbZuJ7O7Ss3Jat0hBcxd+gGYGyRw370qGn1njPoosFUIDZsA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=mail.rakuten.com; dmarc=pass action=none
+ header.from=mail.rakuten.com; dkim=pass header.d=mail.rakuten.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mail.rakuten.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=QrW9gUBaBxG08jU/fFyMEai71+sgf0yrAfuep0YEaCU=;
+ b=FoV9lQeyHzAY/77EbaPqIGBfRgNuxkC2Pg7BIe3+5lzeJM7Jk1tsfiy4U2rxzzc4CkzYejtPvDfQ3e2rDW5tLur/5T3dC6patpd7jfopXqH7BzveYjrhOwKpQBEpvOjQ4ni0x6POfd14xBZTbSaXspskPYTczXmLtfbHzVOWvq0=
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=mail.rakuten.com;
+Received: from OS3P286MB0753.JPNP286.PROD.OUTLOOK.COM (2603:1096:604:f5::12)
+ by TYRP286MB4199.JPNP286.PROD.OUTLOOK.COM (2603:1096:405:130::9) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8678.23; Wed, 23 Apr
+ 2025 08:49:40 +0000
+Received: from OS3P286MB0753.JPNP286.PROD.OUTLOOK.COM
+ ([fe80::e469:587b:e02f:6f81]) by OS3P286MB0753.JPNP286.PROD.OUTLOOK.COM
+ ([fe80::e469:587b:e02f:6f81%2]) with mapi id 15.20.8655.030; Wed, 23 Apr 2025
+ 08:49:40 +0000
+Content-Type: multipart/alternative; boundary="===============2195400133619202322=="
+Subject: =?utf-8?q?Keep_the_Vibe_Alive!_Join_to_Attend_Final_Sessions_of_RPC_2025!_=F0=9F=9A=80?=
+From: rakuten-product-conference@mail.rakuten.com
+To: shnk22aiml@cmrit.ac.in
+Date: Wed, 23 Apr 2025 08:49:39 +0000
+X-ClientProxiedBy: TYCPR01CA0177.jpnprd01.prod.outlook.com
+ (2603:1096:400:2b2::16) To OS3P286MB0753.JPNP286.PROD.OUTLOOK.COM
+ (2603:1096:604:f5::12)
+Return-Path: rakuten-product-conference@mail.rakuten.com
+Message-ID:
+ <OS3P286MB07535707DD240798828F8919A2BA2@OS3P286MB0753.JPNP286.PROD.OUTLOOK.COM>
+MIME-Version: 1.0
+X-MS-Exchange-MessageSentRepresentingType: 1
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: OS3P286MB0753:EE_|TYRP286MB4199:EE_
+X-MS-Office365-Filtering-Correlation-Id: 4e7c080c-006a-4da0-8491-08dd8243c90b
+X-MS-Exchange-AtpMessageProperties: SA
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam:
+	BCL:0;ARA:13230040|1800799024|52116014|376014|366016|13003099007|8096899003|38350700014;
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?RFVFaERjZzNjaVhVajN0OEdUcUZDaDBlY1YyYThNVHZpVkFXNmNFRks5WXVx?=
+ =?utf-8?B?ZU45RDY1VVhqc0pYZGV3N1V5ZTd5aTE5Q2RKd2R5TEljZnVmRzZpTU5TbmVj?=
+ =?utf-8?B?cGc1UlRUM2tiSThZVFJFbTlGTjZxOVRISHJHdmppem5KTjBFdFd1bWxTSml2?=
+ =?utf-8?B?ancrb0V5eXpVcU5HblU3WTU0TTBqWFRlSkUzNGxVY1R3T01qeTMyREpUZjRZ?=
+ =?utf-8?B?QzdWUG9RcmFPM3hoL0taT0pUb0VoWVNrenhuM09kUW1DQmJvWW9aSmMwbDVW?=
+ =?utf-8?B?L2QyS2hqVWdPUjVxMXZDTVZNWTZaOThSdmxnKy8wWkhjL2R4Y0F6bk44UnY1?=
+ =?utf-8?B?OGJiaGw4cGRCblBFSkFJUmM2dnNBY0lURUFpV1FOUEpVL21rZ3RyMHF1aXJB?=
+ =?utf-8?B?MkptdXk3SFZiZ2JSVG44cURxbUxISjNyRGtxR3hyTTNoYzd5dDhzN2s3bVNJ?=
+ =?utf-8?B?R2JpMFJ2OUI4ZTdWSVhkaFd0QVc4Nys3MzIvdHVBM0kvelkxcU56L1NZanVh?=
+ =?utf-8?B?MloybWxXdWd2TC9td2UxbkZkbUtJVkhvcUpDa1dtVWdZVTRVUEduenh6dkF3?=
+ =?utf-8?B?YUkvRG54MENsSFlZWGowekRWUzYrYU5Yazc4L1kwS2RLSGNEMFFUOHZEMmx0?=
+ =?utf-8?B?MXdHdFZVWDhXMklYWkltVkhNckpZOUhMUkdJa2pSTnlzSFdHUXRWZFNOZ29H?=
+ =?utf-8?B?ZUFvV0hpeWxuWCtLRzZrMlpHSkJyZHJ1ZEE5Y3A0VUlsUzhxWExJWjlYNXRI?=
+ =?utf-8?B?aFJkR2tZVTA4WlhPNGw4UGFnb05WWkRBNCtjZU50ZnhwWnIxYTlJTlV5Z3pO?=
+ =?utf-8?B?V0dLTEFyR2U0UDllb3g1RS9FdUV3cVpEMm9EM3JPdDQ4NUlHNjlYbEV0Tkht?=
+ =?utf-8?B?VHlEWmVLS0VGaThndDFaSkV0QWJ5eVVBMTJ5M0FOYm43WkJNQmNVQm1VNkNs?=
+ =?utf-8?B?WUVSVUF4TjNLVHRtdncwTHF2WFE1WHlsVERMaWVwa1pJQ2Y4dnFMOFMzbzZD?=
+ =?utf-8?B?WVQ1UGsxeEw4SnNIM0U0emZVYTBTa0NNajh2RE9PcXlTOHpoMUJ4RWhpVVhM?=
+ =?utf-8?B?RXE0MStYaGJPMjVXWUZEUXd3Y2dOc0k5ZzdtNndudnNWMC9VYVYzTklVdDR1?=
+ =?utf-8?B?UEpUREFxQjdCR29Xd3hyVHZJem44WDFDSm01VGl2Q1VzYTYwb1h0OHFaNTZ0?=
+ =?utf-8?B?WDVqMi92N25YRHFBUWhrN3RaaVFEOEhtMmxsTkxyQzNzYTJZalUwQlR0a245?=
+ =?utf-8?B?VlJBMlJXR3gyOXZWc2JoVnJ5SVZQQk5xeFVtdU5WbDFPN09KQ3RaUE9NVWVB?=
+ =?utf-8?B?c0J6MUxPVmVIQXkreVlBaU9ad0FJbTd3NlBPZ3pkYnRaY0hMQ3RTNWxSdHlv?=
+ =?utf-8?B?MnQyTnI0OHQ3MHIrb0NqZStlMkpiRHJicGs2dkdPMnJaU3hzQkg0aktieEc5?=
+ =?utf-8?B?WGFMMlBFWEdNaHEvaVhsWXp3cFJVOTdFR2E5bmdCVFZsZDJFMnRSOXAveGVx?=
+ =?utf-8?B?aks0Uy9CTEFXcE9pRzJyU0hSeHNDYTZOUzVpbm43WlpIeTAwK0NmZmIzK3Jn?=
+ =?utf-8?B?YnhsaWxoWHV2QUJvSlZXZFQzN3dNR0JuWXlsSmdNS09mbks2bHlxR0luRTQ1?=
+ =?utf-8?B?aCtpMFRtY1V0NW8xb1NJK0lVN2hhTytPWlk3MG9BRlJZbThOQlB1NXVoVzhO?=
+ =?utf-8?B?cERWeGJNVHhqYkVLVGdQcXFKOHlnVU5CSnRZTzlBeTNDZ1lDeExvc044b283?=
+ =?utf-8?B?WjJoL1RwbHpORmRVZXF4UTluaktrNDNzbmRCL2t0QTF3WTFnL2xvNy9uc1g5?=
+ =?utf-8?B?U3FHeFRtOWV2VXU1dFdIbEx6OFZ6MERlbWJhVFFuRDNmZytiZk5ubzkvWmtu?=
+ =?utf-8?B?aFBSV2lwQjJHZDZ2T0RZUFlIR3h3cGh2eWxOSXprTjg4eTcvRWY1L3R5RDlS?=
+ =?utf-8?B?Ui9CTTZEbms3RUJ4cDdUek5GdzNNUU52dHc3LzNrLytZZG5vanZvc1ptSTZY?=
+ =?utf-8?B?R2pYNzZRL0p3PT0=?=
+X-Forefront-Antispam-Report:
+	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:OS3P286MB0753.JPNP286.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(52116014)(376014)(366016)(13003099007)(8096899003)(38350700014);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0:
+	=?utf-8?B?ZmZoV1NFTVluUGhlRzJ2cUdYbUlwZFNIc204S0pNbGNqeTJ4dkk2dFlZbG1r?=
+ =?utf-8?B?TjMxb29GUDVQNGxVUkVBcnJpU1BIaTlWamRPM3lSd09WU2I1UG5tTWdsSlBM?=
+ =?utf-8?B?aTdkUXhjcDVqWWpsQ2RTOVhqOEJtZDBYU09neHJrZHJ1RmluSmxyTG5XVElk?=
+ =?utf-8?B?dDBRNHpFMXU0YW1kYzVYanB1S3NVVlFjMDNUYnptaDRvcUtEUzJGbFFzYUNq?=
+ =?utf-8?B?Wm9QdFYzNXcvbVd4U0JnWkltOHNnQ0c3aGRrSEQyZWNvaU9CZTE2elNzSWtY?=
+ =?utf-8?B?UHJrb3FOeE1DYVF0T3ZMY3dWQ0VoUXhETGdZbU8wR05ITGZ6RlVrOVVvZzAz?=
+ =?utf-8?B?NWpoRVRPTCtpRS9vTFk5Z3VLbGRUaU9NWklXejVkR1VrTy9GM3dkdkxtUnpL?=
+ =?utf-8?B?Q0lDKzNLZXk3azJKN3ZjNjFqSUtPOXF2a2ptMk5hbEJabmlHYWNxN0tWc29a?=
+ =?utf-8?B?ZVk1SE1UbXRMTWhYOGtneWZzK0tudGM2Q1ZTMnNPSERpWVZaNXVKamlielZP?=
+ =?utf-8?B?WFpNQnJESVVrMzE0blhWUWlhb3kvRDYxcW5HUFN5UElra09HdVlmdmo2aDdw?=
+ =?utf-8?B?ZXRrZGdsbnQ3d2VVMTJ4UDBvajY0cXZkTmdkR3Y2UWV4b2NxSFBjZVdQeEFp?=
+ =?utf-8?B?b0FoZTBBZnBmYmtMZkZqRHdqd0FoLzdUeUZIam8wTk9LWUd2d2tTVzJ3ZFpr?=
+ =?utf-8?B?Y0lGdWdxOXZpdE5URytkZ0NUNVhwNCtDc1ZUbFZBcWE2WFN2UTI2U1hxV2hX?=
+ =?utf-8?B?RWdWbUg3Y2daZU9YK0hHVllaOVB0eGpwYzFuNGVLVTRiL3BTOVBDRFh2QVdV?=
+ =?utf-8?B?MlpLZ1l2bE9rNnV0dllPYy8wWGVoam5NK041RXpyZ3VHdGpZTlhyalZKdkc4?=
+ =?utf-8?B?NFdhZkpUSUdOdSsrZlhBSWVZeGhFNVJjLzN3ZklnUU9wNzdTSWpaK3paVnhm?=
+ =?utf-8?B?UHFyQk5WR1JtbzB2MHJwVnVzbzBXSm5xNkhGSlcvNnVMRkEwOFFyT0Zqekk3?=
+ =?utf-8?B?dnlCaUg3SjVjenBHbUpKVFFkRVFRdHBYR0YwWnM0MzN6MWlvNzViNVM0QmIv?=
+ =?utf-8?B?UHZpVUU0RzVjczZCUFhCL2pNMytPa1IyZW8zQnRTUHB3TlQxOTJkNEtoWjRU?=
+ =?utf-8?B?MU5LYnRiNWpQZ3lxdUdIcldtKzR0eTQ3M0ZuNGI4SDZhcjVYTnU3ak1kYnlj?=
+ =?utf-8?B?OVhVUkVXUy9BMVVSbkNxQUZQZ0V4TnUwSks3NjJjbEc5dzFWNVVWVEhZQU9R?=
+ =?utf-8?B?OGQ0bUdOcWNQN2pKSEdoWXBJVE51a2EvdExQWGhwcUpRV3gwaGtzNW9PZ0F2?=
+ =?utf-8?B?Qk5MakM2QVp1NXdyaEdocVRDMGkxSFlkS3pYQVJHUnQyN25GL2tTVlJlNVo2?=
+ =?utf-8?B?OE4yMnFSblNqNEtTYmg2aWlyUXdSbXM5TkJ3RXh6aFpaUGoyWGQrU0EwUEZK?=
+ =?utf-8?B?QlAwbmhKMjREbFNVWGN3Um9ZSVFLYW1HQnU4YmVoZnBZaTVMRTRVdEdRdmVX?=
+ =?utf-8?B?cWM2cTRYVlJZYUtlTHlVQWhsb3JoTFNMeHNCR2dLSHU5bytkK1ZzMEk2TTBt?=
+ =?utf-8?B?M3VWYmVGWEZkWXM4Nkx1anltclBzdzdXV3lUL1VobnIyZnZrWUVUa0k5UWNj?=
+ =?utf-8?B?YWhFTlMzQ2g4dFk4QlQ5S21UZENGaFB4SkFXZ3JQT05JT0QzVyt1MHJmcmNy?=
+ =?utf-8?B?ZzFpbWVjdDJtdmFpeEVyZ1ZyWEl3bCtIQXF2VmRMbjE0R25BYmdoOEdLNW85?=
+ =?utf-8?B?dEpEWVNmL1hTa1d4ZEFyQkpEdXdWVWl2N3pZRFdvK2pDOHB4eDRPaGRrdFcv?=
+ =?utf-8?B?RXRNTEZUdStSbHJTNGRSRUlhamF1eHIwTFRXM0Y3cm01T0hoTnBxdFhlTVZj?=
+ =?utf-8?B?Z2hkOHlQNkc1YUIvVVJ0VVdyQTEzcE9hajduSnNFaDlFdkltb3VCWENLbHFh?=
+ =?utf-8?B?Zzl2UjJtR21iNlB1Q2FiaG1PYWJXQ1hKTFU2Y0d6c1FIUXJRbUxpalFrY3g1?=
+ =?utf-8?B?SzJkQ0hzY2ZtZ2ZkbDlncDJMcUN6WVloQjdaajRSQm1mbHZ5ejJ6MHRPQiti?=
+ =?utf-8?B?a1JUaHkwalRRZ0pubTFpdWh1NW1WWTJ2bDhVZz09?=
+X-OriginatorOrg: mail.rakuten.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 4e7c080c-006a-4da0-8491-08dd8243c90b
+X-MS-Exchange-CrossTenant-AuthSource: OS3P286MB0753.JPNP286.PROD.OUTLOOK.COM
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 23 Apr 2025 08:49:40.4917
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 53a8b0d9-d900-48cc-9d7e-5935dc8d5b17
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: yPqChoc7W9RQiGKX0wIwBamoL8fX065wMAuPdc8YP0kLdeGCwcZJRi/G26Xa1pI2vHSKjRj3Fp72qyQvqr3RerS6As+AW59bPqeWv37FD7s=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYRP286MB4199
+
+--===============2195400133619202322==
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: base64
+
+PGh0bWw+PGhlYWQ+DQo8bWV0YSBodHRwLWVxdWl2PSJDb250ZW50LVR5cGUiIGNvbnRlbnQ9InRl
+eHQvaHRtbDsgY2hhcnNldD11dGYtOCI+PHN0eWxlPgogICAgICAgIGJvZHkgeyBmb250LWZhbWls
+eTogUmFrdXRlbiBTYW5zLCBzYW5zLXNlcmlmOyBmb250LXNpemU6MTFwdDt9CiAgICAgICAgLmhl
+YWRlciB7IGNvbG9yOiAjMDA4MmNjOyB9CiAgICAgICAgLmNvbnRlbnQgeyBtYXJnaW4tdG9wOiAy
+MHB4OyB9CiAgICA8L3N0eWxlPgogICAgPC9oZWFkPgogICAgCiAgICA8Ym9keT4KICAgICAgICA8
+cD5IZWxsbyBTaHJpbGFrc2htaSBOIGssPC9wPgoKICAgICAgICA8cD5XZeKAmXJlIGhhbGZ3YXkg
+dGhyb3VnaCA8c3Ryb25nPlJha3V0ZW4gUHJvZHVjdCBDb25mZXJlbmNlIDIwMjU8L3N0cm9uZz4s
+IGJ1dCB0aGUgc2Vjb25kIGhhbGYgaXMganVzdCBhcyBleGNpdGluZyE8L3A+CgogICAgICAgIDxw
+PkNvbWluZyB1cDo8L3A+CiAgICAgICAgPHVsPgogICAgICAgICAgICA8bGk+PHN0cm9uZz5QYW5l
+bCBkaXNjdXNzaW9uczwvc3Ryb25nPiB3aXRoIGluZHVzdHJ5IHZvaWNlcyBvbiBBSS1yZWFkaW5l
+c3M8L2xpPgogICAgICAgICAgICA8bGk+PHN0cm9uZz5Vc2UgY2FzZSBkZWVwLWRpdmVzPC9zdHJv
+bmc+IGludG8gcHJvZHVjdCBkZXNpZ24gYW5kIGVuZ2luZWVyaW5nPC9saT4KICAgICAgICAgICAg
+PGxpPjxzdHJvbmc+Q2xvc2luZyBrZXlub3RlPC9zdHJvbmc+IHRoYXQgY29ubmVjdHMgaXQgYWxs
+IHRvZ2V0aGVyPC9saT4KICAgICAgICA8L3VsPgoKICAgICAgICA8cD7wn5SXIEhhdmVu4oCZdCBq
+b2luZWQgeWV0PyBJdOKAmXMgbm90IHRvbyBsYXRlLCBqb2luIHVzaW5nIHRoZSBsaW5rIGJlbG93
+OjwvcD4KCiAgICAgICAgPHVsPgogICAgICAgICAgICA8bGk+PHN0cm9uZz5ab29tIFdlYmluYXIg
+TGluazogPC9zdHJvbmc+IDxhIGhyZWY9Imh0dHBzOi8vcmFrdXRlbi56b29tLnVzL2ovOTUyODcw
+OTUzNjc/cHdkPURuM21DYzFFbUYxbmloRXNhS1JsMXNmb0drakRpdS4xIj5odHRwczovL3Jha3V0
+ZW4uem9vbS51cy9qLzk1Mjg3MDk1MzY3P3B3ZD1EbjNtQ2MxRW1GMW5paEVzYUtSbDFzZm9Ha2pE
+aXUuMSA8L2E+PC9saT4KICAgICAgICAgICAgPGxpPjxzdHJvbmc+V2ViaW5hciBJRDogPC9zdHJv
+bmc+OTUyIDg3MDkgNTM2NzwvbGk+CiAgICAgICAgICAgIDxsaT48c3Ryb25nPlBhc3Njb2RlOiA8
+L3N0cm9uZz4wNTU2Mjg8L2xpPgogICAgICAgIDwvdWw+CgogICAgICAgIDxwPkFmdGVybm9vbiBz
+ZXNzaW9ucyBydW4gdGlsbCA0OjAwIFBNIElTVCwgYW5kIGVhY2ggb25lIGJyaW5ncyB1bmlxdWUg
+aW5zaWdodHMgb24gYnVpbGRpbmcgQUktcmVhZHkgcHJvZHVjdHMgYW5kIHRlYW1zLjwvcD4KCiAg
+ICAgICAgPHA+PGVtPlJlbWVtYmVyLCBqb2luaW5nIGV2ZW4gb25lIHNlc3Npb24gdG9kYXkgbWFr
+ZXMgeW91IGVsaWdpYmxlIGZvciB0aGUgcGFydGljaXBhdGlvbiBjZXJ0aWZpY2F0ZS48L2VtPjwv
+cD4KCiAgICAgICAgPHA+V2XigJlsbCBzZWUgeW91IHRoZXJlLjxicj48c3Ryb25nPlRlYW0gUlBD
+ICcyNTwvc3Ryb25nPjwvcD4KICAgIDwvYm9keT4KICAgIDwvaHRtbD4KICAgIA==
+
+--===============2195400133619202322==--
