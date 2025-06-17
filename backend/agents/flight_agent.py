@@ -1,7 +1,7 @@
 # agents/flight_agent.py
 from langchain.agents import initialize_agent, Tool
-from langchain.chat_models import ChatOpenAI
-from services.flight_api_service import search_flights, book_flight
+from langchain_community.chat_models import ChatOpenAI
+from backend.services.flight_api_service import search_flights, book_flight
 
 def build_flight_agent():
     llm = ChatOpenAI()

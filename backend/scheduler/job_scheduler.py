@@ -1,6 +1,6 @@
 # scheduler/job_scheduler.py
 from apscheduler.schedulers.background import BackgroundScheduler
-from agents.appointment_agent import build_appointment_agent
+from backend.agents.appointment_agent import build_appointment_agent
 
 def send_daily_meeting_reminder():
     agent = build_appointment_agent()

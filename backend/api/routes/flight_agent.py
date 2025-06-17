@@ -1,6 +1,6 @@
 # api/routes/flight_agent.py
 from fastapi import APIRouter
-from agents.flight_agent import build_flight_agent
+from backend.agents.flight_agent import build_flight_agent
 
 router = APIRouter()
 
