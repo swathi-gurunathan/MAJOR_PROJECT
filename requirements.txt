@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+langchain
+openai
+python-jose
+apscheduler
+supabase
+python-dotenv
+httpx
+google-api-python-client
+google-auth
