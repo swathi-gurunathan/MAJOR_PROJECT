@@ -25,3 +25,5 @@
     GOOGLE_CLIENT_SECRET=your-secret-here
 
 4. JWT_SECRET - random string that your FastAPI app uses to sign and verify JWT tokens.
+
+5. to run: uvicorn backend.main:app --reload --port 8080
