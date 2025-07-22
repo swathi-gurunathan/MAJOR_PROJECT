@@ -1,0 +1,9 @@
+fastapi 
+uvicorn 
+openai 
+langchain 
+apscheduler 
+google-auth 
+google-api-python-client 
+fastapi-jwt-auth
+langchain_community
