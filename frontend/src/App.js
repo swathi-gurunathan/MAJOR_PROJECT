@@ -1,123 +1,97 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState } from "react";
+import './App.css';
 
-function FlightBooking() {
-  const [formData, setFormData] = useState({
-    from: '',
-    to: '',
-    departureDate: '',
-    returnDate: '',
-    passengers: 1,
+function App() {
+  const [form, setForm] = useState({
+    name: "",
+    age: "",
+    source: "",
+    destination: "",
+    date: "",
+    train_number: "",
   });
 
-  const [response, setResponse] = useState(null);
-  const [error, setError] = useState(null);
+  const [message, setMessage] = useState(null);
 
-  // Handles form input changes
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  // Function to call backend API on button click
-  const handleSubmit = () => {
-    // Clear previous response/error
-    setResponse(null);
-    setError(null);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-    axios.post('http://localhost:9000/api/flight-book', formData)
-      .then(res => {
-        console.log("Backend response:", res.data);
-        setResponse(res.data);
-      })
-      .catch(error => {
-        if (error.response) {
-          // Backend returned an error response (non 2xx)
-          console.error('Response error:', error.response.data);
-          setError(`Server responded with error: ${JSON.stringify(error.response.data)}`);
-        } else if (error.request) {
-          // Request was made but no response received
-          console.error('No response received:', error.request);
-          setError('No response received from server.');
-        } else {
-          // Other errors setting up request
-          console.error('Error setting up request:', error.message);
-          setError(`Request error: ${error.message}`);
-        }
+    // Basic validation
+    if (
+      !form.name || !form.age || !form.source ||
+      !form.destination || !form.date || !form.train_number
+    ) {
+      setMessage("Please fill in all fields.");
+      return;
+    }
+
+    try {
+      const res = await fetch("http://localhost:9000/book-ticket", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...form,
+          age: Number(form.age), // Convert age to number
+        }),
       });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        setMessage(`Success! Your ticket ID is ${data.ticket_id}`);
+      } else {
+        setMessage(`Failed: ${data.detail || "Unknown error"}`);
+      }
+    } catch (error) {
+      setMessage("Error connecting to server.");
+    }
   };
 
   return (
-    <div style={{ maxWidth: 400, margin: 'auto', padding: 20 }}>
-      <h2>Flight Booking</h2>
-
-      <label>From:</label>
-      <input 
-        type="text" 
-        name="from" 
-        value={formData.from} 
-        onChange={handleChange} 
-        placeholder="Departure city"
-        style={{ width: '100%', marginBottom: 10 }}
-      />
-
-      <label>To:</label>
-      <input 
-        type="text" 
-        name="to" 
-        value={formData.to} 
-        onChange={handleChange} 
-        placeholder="Destination city"
-        style={{ width: '100%', marginBottom: 10 }}
-      />
-
-      <label>Departure Date:</label>
-      <input 
-        type="date" 
-        name="departureDate" 
-        value={formData.departureDate} 
-        onChange={handleChange} 
-        style={{ width: '100%', marginBottom: 10 }}
-      />
-
-      <label>Return Date (optional):</label>
-      <input 
-        type="date" 
-        name="returnDate" 
-        value={formData.returnDate} 
-        onChange={handleChange} 
-        style={{ width: '100%', marginBottom: 10 }}
-      />
-
-      <label>Passengers:</label>
-      <input 
-        type="number" 
-        name="passengers" 
-        min="1" 
-        value={formData.passengers} 
-        onChange={handleChange} 
-        style={{ width: '100%', marginBottom: 15 }}
-      />
-
-      <button onClick={handleSubmit} style={{ width: '100%', padding: 10, fontSize: 16 }}>
-        Book Flight
-      </button>
-
-      {response && (
-        <div style={{ marginTop: 20, padding: 10, backgroundColor: '#e0ffe0' }}>
-          <h3>Booking Successful:</h3>
-          <pre>{JSON.stringify(response, null, 2)}</pre>
+    <div className="container">
+      <h2>Train Ticket Booking</h2>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label>Name:</label><br />
+          <input name="name" value={form.name} onChange={handleChange} />
         </div>
-      )}
-
-      {error && (
-        <div style={{ marginTop: 20, padding: 10, backgroundColor: '#ffe0e0', color: 'red' }}>
-          <h3>Error:</h3>
-          <p>{error}</p>
+        <div>
+          <label>Age:</label><br />
+          <input name="age" type="number" value={form.age} onChange={handleChange} />
         </div>
+        <div>
+          <label>Source:</label><br />
+          <input name="source" value={form.source} onChange={handleChange} />
+        </div>
+        <div>
+          <label>Destination:</label><br />
+          <input name="destination" value={form.destination} onChange={handleChange} />
+        </div>
+        <div>
+          <label>Travel Date:</label><br />
+          <input name="date" type="date" value={form.date} onChange={handleChange} />
+        </div>
+        <div>
+          <label>Train Number:</label><br />
+          <input name="train_number" value={form.train_number} onChange={handleChange} />
+        </div>
+        <br />
+        <button type="submit">Book Ticket</button>
+      </form>
+
+      {message && (
+        <p className={`message ${message.startsWith("Success") ? "success" : "error"}`}>
+          {message}
+        </p>
       )}
     </div>
   );
 }
 
-export default FlightBooking;
+export default App;
