@@ -1,61 +1,58 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-from fastapi.middleware.cors import CORSMiddleware
 import requests
 
 app = FastAPI()
 
-# Allow CORS so React frontend can call this API
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],  # In production, specify your frontend URL(s)
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
-class TrainBooking(BaseModel):
+# Define request schema
+class BookingRequest(BaseModel):
     name: str
     age: int
     source: str
     destination: str
-    date: str  # YYYY-MM-DD
+    date: str  # Format: YYYY-MM-DD
     train_number: str
 
-# Replace these with your actual RapidAPI details
-RAPIDAPI_KEY = "cfa2cbd9a1msh21ffb63abfd755ep13556cjsn224a213cf46f"
-RAPIDAPI_HOST = "irctc1.p.rapidapi.com"  # e.g., "indianrailways.p.rapidapi.com"
+# Function to call IRCTC RapidAPI
+def get_train_schedule(train_number: str):
+    url = f"https://irctc1.p.rapidapi.com/api/v1/getTrainSchedule?trainNo={train_number}"
 
-@app.post("/book-ticket")
-async def book_ticket(booking: TrainBooking):
-    # Example: Call external API to fetch train info before booking
-    url = f"https://{RAPIDAPI_HOST}/trainInfo"  # Adjust endpoint accordingly
     headers = {
-        "X-RapidAPI-Key": RAPIDAPI_KEY,
-        "X-RapidAPI-Host": RAPIDAPI_HOST,
+        "X-RapidAPI-Key": "ef226ee913msh80a6ccaa5adf751p1f8f18jsnac962bce22f5",  # Your API key
+        "X-RapidAPI-Host": "irctc1.p.rapidapi.com"
     }
-    params = {"trainno": booking.train_number}
 
+    response = requests.get(url, headers=headers)
+
+    if response.status_code == 200:
+        return response.json()
+    else:
+        raise HTTPException(status_code=response.status_code, detail=f"Failed to fetch train info: {response.status_code} {response.reason}")
+
+# Endpoint to book ticket
+@app.post("/book-ticket")
+def book_ticket(booking: BookingRequest):
     try:
-        response = requests.get(url, headers=headers, params=params)
-        response.raise_for_status()
-    except requests.RequestException as e:
-        # Return a HTTP 502 Bad Gateway error if external API fails
-        raise HTTPException(status_code=502, detail=f"Failed to fetch train info: {e}")
+        schedule = get_train_schedule(booking.train_number)
 
-    train_info = response.json()
+        return {
+            "message": "Ticket booked successfully!",
+            "passenger": {
+                "name": booking.name,
+                "age": booking.age
+            },
+            "journey": {
+                "from": booking.source,
+                "to": booking.destination,
+                "date": booking.date,
+                "train_number": booking.train_number,
+                "train_name": schedule.get("data", {}).get("train_name", "N/A"),
+                "route": schedule.get("data", {}).get("route", [])
+            }
+        }
 
-    # You can add more validation logic here, for example:
-    # - Confirm train exists
-    # - Check source/destination in train_info
-    # - Validate travel date based on train schedule
+    except HTTPException as http_err:
+        raise http_err
+    except Exception as e:
+        raise HTTPException(status_code=502, detail=str(e))
 
-    # For demonstration, generate a fake ticket id
-    ticket_id = "TICKET12345"
-
-    return {
-        "message": "Train ticket booked successfully!",
-        "ticket_id": ticket_id,
-        "train_info": train_info,
-        "booking_details": booking,
-    }
